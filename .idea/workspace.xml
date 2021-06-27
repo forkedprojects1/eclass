@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3fc7981b-b755-44e2-b9fe-ec562526580c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/eclass/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/eclass/vendor/grpc/grpc" />
+      <path value="$PROJECT_DIR$/eclass/vendor/twilio/sdk" />
+      <path value="$PROJECT_DIR$/eclass/vendor/beyondcode/laravel-dump-server" />
+      <path value="$PROJECT_DIR$/eclass/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/eclass/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/eclass/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/eclass/vendor/alaouy/youtube" />
+      <path value="$PROJECT_DIR$/eclass/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/eclass/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/eclass/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/eclass/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/eclass/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/eclass/vendor/pragmarx/google2fa-qrcode" />
+      <path value="$PROJECT_DIR$/eclass/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/eclass/vendor/aws/aws-sdk-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/eclass/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/eclass/vendor/bigbluebutton/bigbluebutton-api-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/vimeo/laravel" />
+      <path value="$PROJECT_DIR$/eclass/vendor/vimeo/vimeo-api" />
+      <path value="$PROJECT_DIR$/eclass/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/eclass/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/eclass/vendor/pragmarx/google2fa-laravel" />
+      <path value="$PROJECT_DIR$/eclass/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/eclass/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/eclass/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/eclass/vendor/league/event" />
+      <path value="$PROJECT_DIR$/eclass/vendor/league/glide" />
+      <path value="$PROJECT_DIR$/eclass/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/eclass/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/eclass/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/eclass/vendor/league/flysystem-aws-s3-v3" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/eclass/vendor/tightenco/collect" />
+      <path value="$PROJECT_DIR$/eclass/vendor/rap2hpoutre/fast-excel" />
+      <path value="$PROJECT_DIR$/eclass/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/eclass/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/eclass/vendor/revolution/socialite-amazon" />
+      <path value="$PROJECT_DIR$/eclass/vendor/braintree/braintree_php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/shipu/php-aamarpay-payment" />
+      <path value="$PROJECT_DIR$/eclass/vendor/devmarketer/easynav" />
+      <path value="$PROJECT_DIR$/eclass/vendor/silviolleite/laravelpwa" />
+      <path value="$PROJECT_DIR$/eclass/vendor/composer" />
+      <path value="$PROJECT_DIR$/eclass/vendor/laravel-notification-channels/onesignal" />
+      <path value="$PROJECT_DIR$/eclass/vendor/anhskohbo/no-captcha" />
+      <path value="$PROJECT_DIR$/eclass/vendor/kutia-software-company/larafirebase" />
+      <path value="$PROJECT_DIR$/eclass/vendor/artesaos/seotools" />
+      <path value="$PROJECT_DIR$/eclass/vendor/craftsys/msg91-laravel-notification-channel" />
+      <path value="$PROJECT_DIR$/eclass/vendor/craftsys/msg91-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/craftsys/msg91-laravel" />
+      <path value="$PROJECT_DIR$/eclass/vendor/stichoza/google-translate-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/eclass/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/eclass/vendor/rmccue/requests" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/eclass/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/eclass/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/eclass/vendor/niklasravnsborg/laravel-pdf" />
+      <path value="$PROJECT_DIR$/eclass/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/eclass/vendor/reecem/mocker" />
+      <path value="$PROJECT_DIR$/eclass/vendor/realrashid/sweet-alert" />
+      <path value="$PROJECT_DIR$/eclass/vendor/graham-campbell/manager" />
+      <path value="$PROJECT_DIR$/eclass/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/eclass/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/eclass/vendor/unicodeveloper/laravel-paystack" />
+      <path value="$PROJECT_DIR$/eclass/vendor/setasign/fpdi" />
+      <path value="$PROJECT_DIR$/eclass/vendor/mashape/unirest-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/eclass/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/eclass/vendor/laravel/helpers" />
+      <path value="$PROJECT_DIR$/eclass/vendor/orangehill/iseed" />
+      <path value="$PROJECT_DIR$/eclass/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/eclass/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/eclass/vendor/laravel/legacy-factories" />
+      <path value="$PROJECT_DIR$/eclass/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/eclass/vendor/anandsiddharth/laravel-paytm-wallet" />
+      <path value="$PROJECT_DIR$/eclass/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/eclass/vendor/razorpay/razorpay" />
+      <path value="$PROJECT_DIR$/eclass/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/eclass/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/eclass/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/eclass/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/eclass/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/eclass/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/eclass/vendor/instamojo/instamojo-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/laravolt/avatar" />
+      <path value="$PROJECT_DIR$/eclass/vendor/kingflamez/laravelrave" />
+      <path value="$PROJECT_DIR$/eclass/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/eclass/vendor/omise/omise-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/eclass/vendor/stripe/stripe-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/eclass/vendor/balping/json-raw-encoder" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/eclass/vendor/jackiedo/dotenv-editor" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/eclass/vendor/berkayk/onesignal-laravel" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/eclass/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/eclass/vendor/ankitpokhrel/tus-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/eclass/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/eclass/vendor/yandex/translate-api" />
+      <path value="$PROJECT_DIR$/eclass/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/eclass/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/eclass/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/eclass/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/eclass/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/eclass/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/eclass/vendor/nwidart/laravel-modules" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/eclass/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/eclass/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/eclass/vendor/nicmart/tree" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/eclass/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/eclass/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/eclass/vendor/tanmuhittin/laravel-google-translate" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/eclass/vendor/obydul/laraskrill" />
+      <path value="$PROJECT_DIR$/eclass/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/eclass/vendor/paypal/rest-api-sdk-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/eclass/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/eclass/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/eclass/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/eclass/vendor/cartalyst/stripe-laravel" />
+      <path value="$PROJECT_DIR$/eclass/vendor/cartalyst/stripe" />
+      <path value="$PROJECT_DIR$/eclass/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/eclass/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/eclass/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/eclass/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/eclass/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/eclass/vendor/jorenvanhocht/laravel-share" />
+      <path value="$PROJECT_DIR$/eclass/vendor/tzsk/payu" />
+      <path value="$PROJECT_DIR$/eclass/vendor/google/cloud-core" />
+      <path value="$PROJECT_DIR$/eclass/vendor/google/gax" />
+      <path value="$PROJECT_DIR$/eclass/vendor/google/apiclient" />
+      <path value="$PROJECT_DIR$/eclass/vendor/google/common-protos" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/image-optimizer" />
+      <path value="$PROJECT_DIR$/eclass/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/eclass/vendor/google/grpc-gcp" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/laravel-activitylog" />
+      <path value="$PROJECT_DIR$/eclass/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/robots-txt" />
+      <path value="$PROJECT_DIR$/eclass/vendor/google/cloud-translate" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/temporary-directory" />
+      <path value="$PROJECT_DIR$/eclass/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/eclass/vendor/google/apiclient-services" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/laravel-sitemap" />
+      <path value="$PROJECT_DIR$/eclass/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/eclass/vendor/google/protobuf" />
+      <path value="$PROJECT_DIR$/eclass/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/laravel-translatable" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/laravel-query-builder" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/eclass/vendor/mollie/mollie-api-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/mollie/laravel-mollie" />
+      <path value="$PROJECT_DIR$/eclass/vendor/iyzico/iyzipay-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/laravel-cookie-consent" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/crawler" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/db-dumper" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/laravel-googletagmanager" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/laravel-backup" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/image" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/laravel-image-optimizer" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/eclass/vendor/spatie/browsershot" />
+      <path value="$PROJECT_DIR$/eclass/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/eclass/vendor/deviny/bbb-php-api" />
+      <path value="$PROJECT_DIR$/eclass/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/eclass/vendor/qoraiche/laravel-mail-editor" />
+      <path value="$PROJECT_DIR$/eclass/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/eclass/vendor/box/spout" />
+      <path value="$PROJECT_DIR$/eclass/vendor/rize/uri-template" />
+      <path value="$PROJECT_DIR$/eclass/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/eclass/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/eclass/vendor/consoletvs/charts" />
+      <path value="$PROJECT_DIR$/eclass/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/eclass/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/eclass/vendor/mpdf/mpdf" />
+      <path value="$PROJECT_DIR$/eclass/vendor/smodav/mpesa" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1uVF6MjwqeGiOJpZr3ZekeO11i0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3fc7981b-b755-44e2-b9fe-ec562526580c" name="Default Changelist" comment="" />
+      <created>1624742677313</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624742677313</updated>
+      <workItem from="1624742682510" duration="2312000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1318" y="437" key="Github.ShareDialog" timestamp="1624743426420">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1318" y="437" key="Github.ShareDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1624743426420" />
+    <state x="1274" y="244" key="Github.UntrackedFilesDialog" timestamp="1624743441630">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1274" y="244" key="Github.UntrackedFilesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1624743441630" />
+  </component>
+</project>
