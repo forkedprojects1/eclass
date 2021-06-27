@@ -63,7 +63,7 @@ return [
     'Description' => 'Description',
     'FeaturedReview' => 'Featured Review',
     'helpful' => 'Was this review helpful',
-    'RecentCourses' => 'Recently Added Courses',
+    'RecentCourses' => 'Most Recent Courses',
     'Yes' => 'Yes',
     'No' => 'No',
     'Report' => 'Report',
