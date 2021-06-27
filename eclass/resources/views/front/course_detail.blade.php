@@ -8,7 +8,7 @@
     @php
         $url =  URL::current();
     @endphp
-   
+
     <meta name="title" content="{{ $course['title'] }}">
     <meta name="description" content="{{ $course['short_detail'] }} ">
     <meta property="og:title" content="{{ $course['title'] }} ">
@@ -27,7 +27,7 @@
     <link rel="canonical" href="{{ url()->full() }}"/>
     <meta name="robots" content="all">
     <meta name="keywords" content="{{ $gsetting->meta_data_keyword }}">
-    
+
 
 @endsection
 
@@ -37,7 +37,7 @@
 <section id="about-home" class="about-home-main-block">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="about-home-block">
                     <h1 class="about-home-heading">{{ $course['title'] }}</h1>
                     <p>{{ $course['short_detail'] }}</p>
@@ -153,7 +153,7 @@
                 </div>
             </div>
             <!-- course preview -->
-            <div class="col-lg-4">
+            <div class="col-lg-12">
                 <div class="about-home-icon text-white text-right">
                     <ul>
                         @if(Auth::check())
@@ -187,252 +187,251 @@
                             <li class="about-icon-one"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i>{{ __('frontstaticword.Wishlist') }}</a></li>
                         @endif
                     </ul>
-                </div>
-                
-                <div class="about-home-product">
-                    <div id="bar-fixed">
-                        <div class="about-home-dtl-training">
-                            <div class="about-home-dtl-block btm-10">
-                            @if($course->type == 1)
-                                <div class="about-home-rate">
-                                    <ul>
+                            <div class="about-home-dtl-training">
+                                <div class="about-home-dtl-block btm-10">
+                                    @if($course->type == 1)
+                                        <div class="about-home-rate">
+                                            <ul>
 
-                                        @if($course->discount_price == !NULL)
-                                            @if($gsetting['currency_swipe'] == 1)
-                                                <li><i class="{{ $currency['icon'] }}"></i>{{ $course['discount_price'] }}</li>
-                                                <li><span><s><i class="{{ $currency->icon }}"></i>{{ $course['price'] }}</s></span></li>
-                                            @else
-                                                <li>{{ $course['discount_price'] }}<i class="{{ $currency['icon'] }}"></i></li>
-                                                <li><span><s>{{ $course['price'] }}<i class="{{ $currency->icon }}"></i></s></span></li>
-                                            @endif
-                                        @else
-                                            @if($gsetting['currency_swipe'] == 1)
-                                                <li><i class="{{ $currency['icon'] }}"></i>{{ $course['price'] }}</li>
-                                            @else
-                                                <li>{{ $course['price'] }}<i class="{{ $currency['icon'] }}"></i></li>
-                                            @endif
-                                        @endif
+                                                @if($course->discount_price == !NULL)
+                                                    @if($gsetting['currency_swipe'] == 1)
+                                                        <li><i class="{{ $currency['icon'] }}"></i>{{ $course['discount_price'] }}</li>
+                                                        <li><span><s><i class="{{ $currency->icon }}"></i>{{ $course['price'] }}</s></span></li>
+                                                    @else
+                                                        <li>{{ $course['discount_price'] }}<i class="{{ $currency['icon'] }}"></i></li>
+                                                        <li><span><s>{{ $course['price'] }}<i class="{{ $currency->icon }}"></i></s></span></li>
+                                                    @endif
+                                                @else
+                                                    @if($gsetting['currency_swipe'] == 1)
+                                                        <li><i class="{{ $currency['icon'] }}"></i>{{ $course['price'] }}</li>
+                                                    @else
+                                                        <li>{{ $course['price'] }}<i class="{{ $currency['icon'] }}"></i></li>
+                                                    @endif
+                                                @endif
 
-                                    </ul>
-                                </div>
-                                @if(Auth::check())
-
-                                    @if(Auth::User()->role == "admin")
-                                        <div class="about-home-btn btm-20">
-                                            <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                            </ul>
                                         </div>
-                                    @else
-                                        @if(isset($course->duration))
-                                            @if($course->duration_type == "m")
-                                            <div class="course-duration btm-10">{{ __('frontstaticword.EnrollDuration') }}: {{ $course->duration }} Months</div>
-                                            @else
-                                            <div class="course-duration btm-10">{{ __('frontstaticword.EnrollDuration') }}: {{ $course->duration }} Days</div>
-                                            @endif
-                                        @endif
+                                        @if(Auth::check())
 
-
-                                        @if(!empty($order) && $order->status == 1)
-
-                                            <div class="about-home-btn btm-20">
-                                                <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
-                                            </div>
-
-                                        @elseif(isset($course_id) && in_array($course->id, $course_id))
-                                            <div class="about-home-btn btm-20">
-                                                <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
-                                            </div>
-
-
-
-
-
-                                        @elseif(!empty($instruct_course->id) && $instruct_course->id == $course->id)
-
-                                            <div class="about-home-btn btm-20">
-                                                <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
-                                            </div>
-
-
-                                        @else
-
-                                            @if(!empty($cart))
+                                            @if(Auth::User()->role == "admin")
                                                 <div class="about-home-btn btm-20">
-                                                    <form id="demo-form2" method="post" action="{{ route('remove.item.cart',$cart->id) }}">
-                                                        {{ csrf_field() }}
-
-                                                        <div class="box-footer">
-                                                         <button type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;{{ __('frontstaticword.RemoveFromCart') }}</button>
-                                                        </div>
-                                                    </form>
+                                                    <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
                                                 </div>
                                             @else
-                                                <div class="about-home-btn btm-20">
-                                                    <form id="demo-form2" method="post" action="{{ route('addtocart',['course_id' => $course->id, 'price' => $course->price, 'discount_price' => $course->discount_price ]) }}"
-                                                        data-parsley-validate class="form-horizontal form-label-left">
-                                                            {{ csrf_field() }}
+                                                @if(isset($course->duration))
+                                                    @if($course->duration_type == "m")
+                                                        <div class="course-duration btm-10">{{ __('frontstaticword.EnrollDuration') }}: {{ $course->duration }} Months</div>
+                                                    @else
+                                                        <div class="course-duration btm-10">{{ __('frontstaticword.EnrollDuration') }}: {{ $course->duration }} Days</div>
+                                                    @endif
+                                                @endif
 
-                                                        <input type="hidden" name="category_id"  value="{{$course->category->id}}" />
 
-                                                        <div class="box-footer">
-                                                         <button type="submit" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;{{ __('frontstaticword.AddToCart') }}</button>
+                                                @if(!empty($order) && $order->status == 1)
+
+                                                    <div class="about-home-btn btm-20">
+                                                        <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                    </div>
+
+                                                @elseif(isset($course_id) && in_array($course->id, $course_id))
+                                                    <div class="about-home-btn btm-20">
+                                                        <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                    </div>
+
+
+
+
+
+                                                @elseif(!empty($instruct_course->id) && $instruct_course->id == $course->id)
+
+                                                    <div class="about-home-btn btm-20">
+                                                        <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                    </div>
+
+
+                                                @else
+
+                                                    @if(!empty($cart))
+                                                        <div class="about-home-btn btm-20">
+                                                            <form id="demo-form2" method="post" action="{{ route('remove.item.cart',$cart->id) }}">
+                                                                {{ csrf_field() }}
+
+                                                                <div class="box-footer">
+                                                                    <button type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;{{ __('frontstaticword.RemoveFromCart') }}</button>
+                                                                </div>
+                                                            </form>
                                                         </div>
-                                                    </form>
-                                                </div>
+                                                    @else
+                                                        <div class="about-home-btn btm-20">
+                                                            <form id="demo-form2" method="post" action="{{ route('addtocart',['course_id' => $course->id, 'price' => $course->price, 'discount_price' => $course->discount_price ]) }}"
+                                                                  data-parsley-validate class="form-horizontal form-label-left">
+                                                                {{ csrf_field() }}
+
+                                                                <input type="hidden" name="category_id"  value="{{$course->category->id}}" />
+
+                                                                <div class="box-footer">
+                                                                    <button type="submit" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;{{ __('frontstaticword.AddToCart') }}</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    @endif
+
+                                                @endif
+
+
                                             @endif
-
-                                        @endif
-
-
-                                    @endif
-                                @else
-                                    <div class="about-home-btn btm-20">
-                                        <a href="{{ route('login') }}" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;{{ __('frontstaticword.AddToCart') }}</a>
-                                    </div>
-                                @endif
-                            @else
-                                <div class="about-home-rate">
-                                    <ul>
-                                        <li>{{ __('frontstaticword.Free') }}</li>
-                                    </ul>
-                                </div>
-                                @if(Auth::check())
-                                    @if(Auth::User()->role == "admin")
-                                        <div class="about-home-btn btm-20">
-                                            <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
-                                        </div>
-                                    @else
-                                        @php
-                                            $enroll = App\Order::where('user_id', Auth::User()->id)->where('course_id', $course->id)->first();
-                                        @endphp
-                                        @if($enroll == NULL)
-                                            <div class="about-home-btn btm-20">
-                                                <a href="{{url('enroll/show',$course->id)}}" class="btn btn-primary" title="Enroll Now">{{ __('frontstaticword.EnrollNow') }}</a>
-                                            </div>
                                         @else
                                             <div class="about-home-btn btm-20">
-                                                <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="Cart">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                <a href="{{ route('login') }}" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;{{ __('frontstaticword.AddToCart') }}</a>
+                                            </div>
+                                        @endif
+                                    @else
+                                        <div class="about-home-rate">
+                                            <ul>
+                                                <li>{{ __('frontstaticword.Free') }}</li>
+                                            </ul>
+                                        </div>
+                                        @if(Auth::check())
+                                            @if(Auth::User()->role == "admin")
+                                                <div class="about-home-btn btm-20">
+                                                    <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                </div>
+                                            @else
+                                                @php
+                                                    $enroll = App\Order::where('user_id', Auth::User()->id)->where('course_id', $course->id)->first();
+                                                @endphp
+                                                @if($enroll == NULL)
+                                                    <div class="about-home-btn btm-20">
+                                                        <a href="{{url('enroll/show',$course->id)}}" class="btn btn-primary" title="Enroll Now">{{ __('frontstaticword.EnrollNow') }}</a>
+                                                    </div>
+                                                @else
+                                                    <div class="about-home-btn btm-20">
+                                                        <a href="{{ route('course.content',['id' => $course->id, 'slug' => $course->slug ]) }}" class="btn btn-secondary" title="Cart">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                    </div>
+                                                @endif
+                                            @endif
+                                        @else
+                                            <div class="about-home-btn btm-20">
+                                                <a href="{{ route('login') }}" class="btn btn-primary" title="Enroll Now">{{ __('frontstaticword.EnrollNow') }}</a>
                                             </div>
                                         @endif
                                     @endif
-                                @else
-                                    <div class="about-home-btn btm-20">
-                                        <a href="{{ route('login') }}" class="btn btn-primary" title="Enroll Now">{{ __('frontstaticword.EnrollNow') }}</a>
-                                    </div>
-                                @endif
-                            @endif
 
 
 
-                            @if(isset($course->refund_policy_id))
-                                <div class="refund-policy-block">
-                                    @php
-                                        $days = $course->policy->days;
-
-                                        $detail = $course->policy->detail;
-                                    @endphp
-                                    <div class="money-back-days">{{ $days }}-Day Money-Back Guarantee
-                                        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="{!! $detail !!}"><i class="fas fa-info-circle"></i></button></div>
-
-                                </div>
-                            @endif
-
-
-                            <div class="about-home-includes-list btm-40">
-                                <ul class="btm-40">
-                                    @if($courseinclude->isNotEmpty())
-                                        <li><span>{{ __('frontstaticword.CourseIncludes') }}</span></li>
-                                        @foreach($course->include as $in)
-                                            @if($in->status ==1)
-                                                <li><i class="fa {{ $in->icon }}"></i>{{ str_limit($in->detail, $limit = 50, $end = '...') }}</li>
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                </ul>
-                               
-                                @if($course['course_tags'] == !NULL)
-                                <span>{{ __('Tags') }}:</span>
-                                <br>
-                                @php
-                                    $tags = $course['course_tags'];
-                                @endphp 
-                                @foreach($tags as $tag)
-                                    <span class="badge badge-secondary"><i class="fa fa-tags"></i> {{ $tag }}</span>
-                                @endforeach</p>
-                                @endif
-                            </div>
-                            <hr>
-
-                            <div class="about-home-share text-center">
-                                <a href="#" data-toggle="modal" data-target="#myModalshare" title="share"><i class="fa fa-share rgt-10"></i>{{ __('frontstaticword.share') }}</a>
-                            </div>
-
-                            <!--Model start-->
-                            <div class="modal fade" id="myModalshare" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                <div class="modal-dialog modal-lg" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-
-                                      <h4 class="modal-title" id="myModalLabel">{{ __('frontstaticword.Sharethiscourse') }}</h4>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    </div>
-                                    <div class="box box-primary">
-                                      <div class="panel panel-sum">
-                                        <div class="modal-body">
-
+                                    @if(isset($course->refund_policy_id))
+                                        <div class="refund-policy-block">
                                             @php
-                                            $url=  URL::current();
+                                                $days = $course->policy->days;
+
+                                                $detail = $course->policy->detail;
                                             @endphp
-
-                                            <!-- The text field -->
-
-                                            <div class="nav-search">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="myInput"  value="{{ $url }}">
-                                                </div>
-                                                <button onclick="myFunction()" class="btn btn-primary">{{ __('frontstaticword.CopyText') }}</button>
-                                            </div>
-
-                                            <div class="social-icon">
-
-                                            @php
-
-                                            echo Share::currentPage('', [], '<div class="row">')
-                                                ->facebook()
-                                                ->twitter()
-                                                ->linkedin('Extra linkedin summary can be passed here')
-                                                ->whatsapp()
-                                                ->telegram();
-
-                                            @endphp
-
-                                            </div>
+                                            <div class="money-back-days">{{ $days }}-Day Money-Back Guarantee
+                                                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="{!! $detail !!}"><i class="fas fa-info-circle"></i></button></div>
 
                                         </div>
-                                      </div>
+                                    @endif
+
+
+                                    <div class="about-home-includes-list btm-40">
+                                        <ul class="btm-40">
+                                            @if($courseinclude->isNotEmpty())
+                                                <li><span>{{ __('frontstaticword.CourseIncludes') }}</span></li>
+                                                @foreach($course->include as $in)
+                                                    @if($in->status ==1)
+                                                        <li><i class="fa {{ $in->icon }}"></i>{{ str_limit($in->detail, $limit = 50, $end = '...') }}</li>
+                                                    @endif
+                                                @endforeach
+                                            @endif
+                                        </ul>
+
+                                        @if($course['course_tags'] == !NULL)
+                                            <span>{{ __('Tags') }}:</span>
+                                            <br>
+                                            @php
+                                                $tags = $course['course_tags'];
+                                            @endphp
+                                            @foreach($tags as $tag)
+                                                <span class="badge badge-secondary"><i class="fa fa-tags"></i> {{ $tag }}</span>
+                                                @endforeach</p>
+                                                @endif
                                     </div>
-                                  </div>
+                                    <hr>
+
+                                    <div class="about-home-share text-center">
+                                        <a href="#" data-toggle="modal" data-target="#myModalshare" title="share"><i class="fa fa-share rgt-10"></i>{{ __('frontstaticword.share') }}</a>
+                                    </div>
+
+                                    <!--Model start-->
+                                    <div class="modal fade" id="myModalshare" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                    <h4 class="modal-title" id="myModalLabel">{{ __('frontstaticword.Sharethiscourse') }}</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                </div>
+                                                <div class="box box-primary">
+                                                    <div class="panel panel-sum">
+                                                        <div class="modal-body">
+
+                                                        @php
+                                                            $url=  URL::current();
+                                                        @endphp
+
+                                                        <!-- The text field -->
+
+                                                            <div class="nav-search">
+                                                                <div class="form-group">
+                                                                    <input type="text" class="form-control" id="myInput"  value="{{ $url }}">
+                                                                </div>
+                                                                <button onclick="myFunction()" class="btn btn-primary">{{ __('frontstaticword.CopyText') }}</button>
+                                                            </div>
+
+                                                            <div class="social-icon">
+
+                                                                @php
+
+                                                                    echo Share::currentPage('', [], '<div class="row">')
+                                                                        ->facebook()
+                                                                        ->twitter()
+                                                                        ->linkedin('Extra linkedin summary can be passed here')
+                                                                        ->whatsapp()
+                                                                        ->telegram();
+
+                                                                @endphp
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Model close -->
                                 </div>
                             </div>
-                            <!--Model close -->
-                        </div>
-                    </div>
 
 
-                    <div class="container-fluid" id="adsense">
-                        <!-- google adsense code -->
-                        <?php
-                          if (isset($ad)) {
-                           if ($ad->isdetail==1 && $ad->status==1) {
-                              $code = $ad->code;
-                              echo html_entity_decode($code);
-                           }
-                          }
-                        ?>
-                    </div>
+                            <div class="container-fluid" id="adsense">
+                                <!-- google adsense code -->
+                                <?php
+                                if (isset($ad)) {
+                                    if ($ad->isdetail==1 && $ad->status==1) {
+                                        $code = $ad->code;
+                                        echo html_entity_decode($code);
+                                    }
+                                }
+                                ?>
+                            </div>
+
+                        <br>
+
+
                 </div>
-                <br>
 
-            </div>
+
         </div>
     </div>
 </section>
@@ -531,7 +530,7 @@
                                                 <div class="row">
                                                 <div class="col-lg-8 col-6">
                                                     {{ $chapter['chapter_name'] }}
-                                                    
+
                                                     @if($course->involvement_request == 1)
                                                         @php
                                                         $fullname = $chapter->user->fname . ' ' . $chapter->user->lname;
@@ -581,7 +580,7 @@
                                        <div id="collapseTwo{{ $chapter->id }}" class="collapse {{ $loop->first ? "show" : "" }}" aria-labelledby="headingTwo" data-parent="#accordion">
                                        
                                      -->
-                                    
+
                                     <div id="collapseTwo{{ $chapter->id }}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 
                                         <div class="card-body">
@@ -1015,7 +1014,7 @@
 
                         ?>
                         @if(isset($alreadyrated))
-                        
+
                         @foreach($coursereviews as $rating)
                         @if($rating->review == !null && $rating->featured == 1)
                         <div class="featured-review-block">
@@ -1048,11 +1047,11 @@
                                 $help = App\ReviewHelpful::where('user_id', Auth::User()->id)->where('review_id', $rating->id)->first();
                                 @endphp
 
-                                
-                              
+
+
                                 @if(isset($help['review_like']) == '1')
                                     <div class="helpful">
-                                       
+
                                         <form  method="post" action="{{route('helpful', $course->id)}}" data-parsley-validate class="form-horizontal form-label-left">
                                         {{ csrf_field() }}
 
@@ -1062,7 +1061,7 @@
 
                                         <input type="hidden" name="helpful"  value="yes" />
                                         <input type="hidden" name="review_like"  value="0" />
-                                        
+
                                           <button type="submit" class="btn btn-link lft-7 rgt-10 "><i class="fa fa-check"></i> {{ __('frontstaticword.Yes') }}</button>
                                         </form>
                                     </div>
@@ -1077,7 +1076,7 @@
 
                                         <input type="hidden" name="helpful"  value="yes" />
                                         <input type="hidden" name="review_like"  value="1" />
-                                        
+
                                           <button type="submit" class="btn btn-link lft-7 rgt-10 ">{{ __('frontstaticword.Yes') }}</button>
                                         </form>
                                     </div>
@@ -1087,7 +1086,7 @@
 
                                 @if(isset($help['review_dislike']) == '1')
                                     <div class="helpful">
-                                       
+
 
                                         <form  method="post" action="{{route('helpful', $course->id)}}" data-parsley-validate class="form-horizontal form-label-left">
                                         {{ csrf_field() }}
@@ -1098,7 +1097,7 @@
 
                                         <input type="hidden" name="helpful"  value="yes" />
                                         <input type="hidden" name="review_dislike"  value="0" />
-                                        
+
                                           <button type="submit" class="btn btn-link lft-7 rgt-10 "><i class="fa fa-check"></i>{{ __('frontstaticword.No') }}</button>
                                         </form>
                                     </div>
@@ -1113,13 +1112,13 @@
 
                                         <input type="hidden" name="helpful"  value="yes" />
                                         <input type="hidden" name="review_dislike"  value="1" />
-                                        
+
                                           <button type="submit" class="btn btn-link lft-7 rgt-10 ">{{ __('frontstaticword.No') }}</button>
                                         </form>
                                     </div>
                                 @endif
 
-                                
+
 
                                 <a href="#" data-toggle="modal" data-target="#myModalreport"  title="report">{{ __('frontstaticword.Report') }}</a>
 
@@ -1136,7 +1135,7 @@
 
 
 
-                
+
 
                 <div class="students-bought btm-30">
                     <h3>{{ __('frontstaticword.RecentCourses') }}</h3>
@@ -1263,7 +1262,7 @@
                         <div class="row">
                             <div class="col-lg-2 col-5">
                                 <div class="instructor-img btm-30">
-                                    
+
                                     @if($course->user->user_img != null || $course->user->user_img !='')
                                       <a href="{{ route('instructor.profile', ['id' => $course->user->id, 'name' => $fullname] ) }}" title="instructor"><img src="{{ asset('images/user_img/'.$course->user['user_img']) }}" class="img-fluid" alt="instructor"></a>
                                     @else
@@ -1618,11 +1617,11 @@
                                 $help = App\ReviewHelpful::where('user_id', Auth::User()->id)->where('review_id', $rating->id)->first();
                                 @endphp
 
-                                
-                              
+
+
                                 @if(isset($help['review_like']) == '1')
                                     <div class="helpful">
-                                       
+
                                         <form  method="post" action="{{route('helpful', $course->id)}}" data-parsley-validate class="form-horizontal form-label-left">
                                         {{ csrf_field() }}
 
@@ -1632,7 +1631,7 @@
 
                                         <input type="hidden" name="helpful"  value="yes" />
                                         <input type="hidden" name="review_like"  value="0" />
-                                        
+
                                           <button type="submit" class="btn btn-link lft-7 rgt-10 "><i class="fa fa-check"></i> {{ __('frontstaticword.Yes') }}</button>
                                         </form>
                                     </div>
@@ -1647,7 +1646,7 @@
 
                                         <input type="hidden" name="helpful"  value="yes" />
                                         <input type="hidden" name="review_like"  value="1" />
-                                        
+
                                           <button type="submit" class="btn btn-link lft-7 rgt-10 ">{{ __('frontstaticword.Yes') }}</button>
                                         </form>
                                     </div>
@@ -1657,7 +1656,7 @@
 
                                 @if(isset($help['review_dislike']) == '1')
                                     <div class="helpful">
-                                       
+
 
                                         <form  method="post" action="{{route('helpful', $course->id)}}" data-parsley-validate class="form-horizontal form-label-left">
                                         {{ csrf_field() }}
@@ -1668,7 +1667,7 @@
 
                                         <input type="hidden" name="helpful"  value="yes" />
                                         <input type="hidden" name="review_dislike"  value="0" />
-                                        
+
                                           <button type="submit" class="btn btn-link lft-7 rgt-10 "><i class="fa fa-check"></i>{{ __('frontstaticword.No') }}</button>
                                         </form>
                                     </div>
@@ -1683,13 +1682,13 @@
 
                                         <input type="hidden" name="helpful"  value="yes" />
                                         <input type="hidden" name="review_dislike"  value="1" />
-                                        
+
                                           <button type="submit" class="btn btn-link lft-7 rgt-10 ">{{ __('frontstaticword.No') }}</button>
                                         </form>
                                     </div>
                                 @endif
 
-                            
+
                                         {{-- report --}}
                                         <a href="#" data-toggle="modal" data-target="#myModalreport"  title="report">{{ __('frontstaticword.Report') }}</a>
                                         <div class="modal fade" id="myModalreport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
