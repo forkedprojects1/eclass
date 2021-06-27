@@ -58,7 +58,7 @@ return [
     'EnrollNow' => 'Enroll Now',
     'ViewMore' => 'View More',
     'Course Includes' => 'Course Includes',
-    'Whatlearn' => 'What you will learn',
+    'Whatlearn' => 'Main Topics of the course',
     'Requirements' => 'Requirements',
     'Description' => 'Description',
     'FeaturedReview' => 'Featured Review',
