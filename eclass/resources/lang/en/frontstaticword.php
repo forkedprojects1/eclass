@@ -67,7 +67,7 @@ return [
     'Yes' => 'Yes',
     'No' => 'No',
     'Report' => 'Report',
-    'CourseContent' => 'Course Content',
+    'CourseContent' => 'Course Overview',
     'Free' => 'Free',
     'AboutInstructor' => 'About the Instructor',
     'StudentFeedback' => 'Student Feedback',
