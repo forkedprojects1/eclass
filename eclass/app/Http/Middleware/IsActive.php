@@ -21,11 +21,11 @@ class IsActive
             if($isactive == 1){
                 return $next($request);
             }else{
-                return redirect()->route('inactive');
+                return $next($request);
             }
             
         }else{
-            return redirect()->route('inactive');
+            return $next($request);
         }
     }
 }

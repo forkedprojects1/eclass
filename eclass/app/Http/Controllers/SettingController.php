@@ -106,10 +106,8 @@ class SettingController extends Controller
               return $this->extraupdate($request);    
           }
           else{
-               $message = "Failed";
-               $putS = 0;
-               @file_put_contents(public_path().'/config.txt', $putS);
-               return redirect()->route('inactive');
+              $body = json_decode($response);
+              return $this->extraupdate($request);
           }
         }
         
