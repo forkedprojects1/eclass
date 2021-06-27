@@ -190,30 +190,6 @@
                 </div>
                 
                 <div class="about-home-product">
-                    <div class="video-item hidden-xs">
-                        <script type="text/javascript">
-                        @if($course->video !="")
-                        var video_url = '<iframe src="{{ asset('video/preview/'.$course['video']) }}" frameborder="0" allowfullscreen></iframe>';
-                        @endif
-                        @if($course->url !="")
-                        var video_url = '<iframe src="{{ str_replace('watch?v=','embed/',$course['url']) }}" frameborder="0" allowfullscreen></iframe>';
-                        @endif
-                        </script>
-
-                        <div class="video-device">
-                            @if($course['preview_image'] !== NULL && $course['preview_image'] !== '')
-                                <img src="{{ asset('images/course/'.$course['preview_image']) }}" class="bg_img img-fluid" alt="Background">
-                            @else
-                                <img src="{{ Avatar::create($course->title)->toBase64() }}" class="bg_img img-fluid" alt="Background">
-                            @endif
-                            @if($course->video !="" || $course->url !="")
-                            <div class="video-preview">
-                                <a href="javascript:void(0);" class="btn-video-play"><i class="fa fa-play"></i></a>
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-
                     <div id="bar-fixed">
                         <div class="about-home-dtl-training">
                             <div class="about-home-dtl-block btm-10">
