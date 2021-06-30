@@ -190,27 +190,6 @@
                             <div class="about-home-dtl-training">
                                 <div class="about-home-dtl-block btm-10">
                                     @if($course->type == 1)
-                                        <div class="about-home-rate">
-                                            <ul>
-
-                                                @if($course->discount_price == !NULL)
-                                                    @if($gsetting['currency_swipe'] == 1)
-                                                        <li><i class="{{ $currency['icon'] }}"></i>{{ $course['discount_price'] }}</li>
-                                                        <li><span><s><i class="{{ $currency->icon }}"></i>{{ $course['price'] }}</s></span></li>
-                                                    @else
-                                                        <li>{{ $course['discount_price'] }}<i class="{{ $currency['icon'] }}"></i></li>
-                                                        <li><span><s>{{ $course['price'] }}<i class="{{ $currency->icon }}"></i></s></span></li>
-                                                    @endif
-                                                @else
-                                                    @if($gsetting['currency_swipe'] == 1)
-                                                        <li><i class="{{ $currency['icon'] }}"></i>{{ $course['price'] }}</li>
-                                                    @else
-                                                        <li>{{ $course['price'] }}<i class="{{ $currency['icon'] }}"></i></li>
-                                                    @endif
-                                                @endif
-
-                                            </ul>
-                                        </div>
                                         @if(Auth::check())
 
                                             @if(Auth::User()->role == "admin")
@@ -285,12 +264,29 @@
                                                 <a href="{{ route('login') }}" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;{{ __('frontstaticword.AddToCart') }}</a>
                                             </div>
                                         @endif
+                                            <div class="about-home-rate">
+                                                <ul>
+
+                                                    @if($course->discount_price == !NULL)
+                                                        @if($gsetting['currency_swipe'] == 1)
+                                                            <li><i class="{{ $currency['icon'] }}"></i>{{ $course['discount_price'] }}</li>
+                                                            <li><span><s><i class="{{ $currency->icon }}"></i>{{ $course['price'] }}</s></span></li>
+                                                        @else
+                                                            <li>{{ $course['discount_price'] }}<i class="{{ $currency['icon'] }}"></i></li>
+                                                            <li><span><s>{{ $course['price'] }}<i class="{{ $currency->icon }}"></i></s></span></li>
+                                                        @endif
+                                                    @else
+                                                        @if($gsetting['currency_swipe'] == 1)
+                                                            <li><i class="{{ $currency['icon'] }}"></i>{{ $course['price'] }}</li>
+                                                        @else
+                                                            <li>{{ $course['price'] }}<i class="{{ $currency['icon'] }}"></i></li>
+                                                        @endif
+                                                    @endif
+
+                                                </ul>
+                                            </div>
                                     @else
-                                        <div class="about-home-rate">
-                                            <ul>
-                                                <li>{{ __('frontstaticword.Free') }}</li>
-                                            </ul>
-                                        </div>
+
                                         @if(Auth::check())
                                             @if(Auth::User()->role == "admin")
                                                 <div class="about-home-btn btm-20">
@@ -315,6 +311,11 @@
                                                 <a href="{{ route('login') }}" class="btn btn-primary" title="Enroll Now">{{ __('frontstaticword.EnrollNow') }}</a>
                                             </div>
                                         @endif
+                                            <div class="about-home-rate">
+                                                <ul>
+                                                    <li>{{ __('frontstaticword.Free') }}</li>
+                                                </ul>
+                                            </div>
                                     @endif
 
 

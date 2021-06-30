@@ -97,7 +97,7 @@ if(Schema::hasTable('color_options')){
   --background-red-bg-color:#F44A4A; 
   --background-grey-bg-color:#F7F8FA;
   --background-light-grey-bg-color:#F9F9F9;
-  --background-black-bg-color:#29303B;
+  --background-black-bg-color:#0284a2;
   --background-white-bg-color:#FFF;
   --background-mehroon-bg-color:#992337;
   --text-black-color:#29303B;
