@@ -52,7 +52,7 @@ return [
     'LastUpdated' => 'Last Updated',
     'Wishlist' => 'Wishlist',
     'Wishlisted' => 'Wishlisted',
-    'GoToCourse' => 'Go To Course',
+    'GoToCourse' => 'Enroll',
     'RemoveFromCart' => 'Remove From Cart',
     'AddToCart' => 'Add To Cart',
     'EnrollNow' => 'Enroll Now',

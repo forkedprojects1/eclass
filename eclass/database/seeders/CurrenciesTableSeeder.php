@@ -21,8 +21,8 @@ class CurrenciesTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'icon' => 'fa fa-inr',
-                'currency' => 'INR',
+                'icon' => 'fa fa-usd',
+                'currency' => 'USD',
                 'default' => 0,
                 'created_at' => '2019-12-11 11:24:24',
                 'updated_at' => '2020-02-08 17:45:15',

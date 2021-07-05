@@ -37,7 +37,7 @@
 <section id="about-home" class="about-home-main-block">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="about-home-block">
                     <h1 class="about-home-heading">{{ $course['title'] }}</h1>
                     <p>{{ $course['short_detail'] }}</p>
@@ -153,7 +153,7 @@
                 </div>
             </div>
             <!-- course preview -->
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="about-home-icon text-white text-right">
                     <ul>
                         @if(Auth::check())
@@ -2116,6 +2116,7 @@ function toggleAllSections() {
 
 
 <style type="text/css">
+
     .read-more-show{
       cursor:pointer;
       color: #0284A2;

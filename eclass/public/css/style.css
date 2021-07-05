@@ -1321,7 +1321,7 @@ sup.redstar {
     /*===== Product-Dtl-Home-Page =====*/
 /* ================================= */
 .about-home-main-block {
-  background-color: var(--background-black-bg-color);
+  background-color: #61c3da;
   position: relative;
 }
 .about-home-block {
@@ -1334,7 +1334,7 @@ sup.redstar {
 }
 .about-home-block p {
   font-size: 21px;
-  color: var(--text-white-color)!important;
+  color: black;
 }
 .home-best-seller {
   text-align: center;
@@ -1390,7 +1390,7 @@ sup.redstar {
 .about-home-rate ul li {
   display: inline-block;
   font-size: 36px;
-  color: var(--text-light-grey-color);
+  color: #d41d1d;
   margin-right: 5px;
   font-weight: 700;
 }
@@ -4774,12 +4774,17 @@ sup.redstar {
   height: 260px;
   margin-right: 50px;
 }
+/*added by me*/
+.about-home-btn.btm-20{
+  text-align: center;
+}
+/*added by me*/
 .about-home-btn .btn-secondary {
   padding: 15px 0;
-  width: 100%;
+  width: 37%;
   border-radius: 1px;
   font-weight: 500;
-  font-size: 17px;
+  font-size: 31px;
   background: var(--background-blue-bg-color);
   color: var(--text-white-color);
 }
