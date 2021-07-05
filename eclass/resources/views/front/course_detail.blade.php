@@ -335,7 +335,7 @@
 
 
                                     <div class="about-home-includes-list btm-40">
-                                        <ul class="btm-40">
+                                        <ul class="btm-40 btmlist">
                                             @if($courseinclude->isNotEmpty())
                                                 <li><span>{{ __('frontstaticword.CourseIncludes') }}</span></li>
                                                 @foreach($course->include as $in)
@@ -441,14 +441,14 @@
 <section id="about-product" class="about-product-main-block">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 @if($whatlearns->isNotEmpty())
                     <div class="product-learn-block">
                         <h3 class="product-learn-heading">{{ __('frontstaticword.Whatlearn') }}</h2>
                         <div class="row">
                             @foreach($course['whatlearns'] as $wl)
                             @if($wl->status ==1)
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-lg-12 col-md-12">
                                 <div class="product-learn-dtl">
                                     <ul>
                                         <li><i class="flaticon-tick-inside-circle"></i>{{ str_limit($wl['detail'], $limit = 120, $end = '...') }}</li>
