@@ -439,15 +439,6 @@ ul {
     margin-bottom: 40px;
 }
 
-/**/
-.btmlist {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-}
-
-/**/
-
 .btm-30 {
     margin-bottom: 30px;
 }
@@ -976,7 +967,7 @@ sup.redstar {
     /*===== Work =====*/
 /* ================================= */
 .learning-work-main-block {
-    background: var(--linear-gradient-bg-color);
+    background: linear-gradient(45deg, #61c3da, #0000003d);
     padding: 10px 0;
 }
 
@@ -1253,7 +1244,7 @@ sup.redstar {
     /*===== Recommendation =====*/
 /* ================================= */
 .border-recommendation .top-border {
-    background: var(--linear-gradient-bg-color);
+    background: linear-gradient(45deg, #61c3da, #0000003d);
     height: 8px;
 }
 
@@ -1503,7 +1494,7 @@ sup.redstar {
 
 .tiny-footer {
     padding: 20px 20px 30px;
-    border-bottom: 5px solid var(--text-red-color);
+    border-bottom: 5px solid #61c3da;
 }
 
 .tiny-footer ul {
@@ -1636,7 +1627,7 @@ sup.redstar {
 .about-home-rate ul li {
     display: inline-block;
     font-size: 36px;
-    color: #d41d1d;
+    color: var(--text-light-grey-color);
     margin-right: 5px;
     font-weight: 700;
 }
@@ -1724,6 +1715,8 @@ sup.redstar {
 
 .product-learn-block {
     padding: 20px;
+    background-color: var(--background-light-grey-bg-color);
+    border: 1px solid #DEDFE0;
 }
 
 .product-learn-dtl ul li {
@@ -1746,13 +1739,7 @@ sup.redstar {
 
 .product-learn-heading {
     font-size: 22px;
-    color: #61c3da;
 }
-
-.course-content-block.btm-30.top-20 h3 {
-    color: #61c3da;
-}
-
 
 .about-home-main-block .video-item {
     text-align: center;
@@ -1814,10 +1801,6 @@ sup.redstar {
     padding: 30px 0;
 }
 
-.requirements h3 {
-    color: #61c3da;
-}
-
 .requirements ul li {
     font-size: 16px;
 }
@@ -1832,10 +1815,6 @@ sup.redstar {
     list-style-type: disc;
     padding-left: 15px;
     margin-top: 20px;
-}
-
-.description-block h3{
-    color:#61c3da;
 }
 
 .description-block ul li {
@@ -1883,10 +1862,6 @@ sup.redstar {
 }
 
 /*===== Students Bought Block  =====*/
-.students-bought h3{
-    color:#61c3da;
-}
-
 .course-bought-block {
     padding: 18px;
     -webkit-transition: all 0.5s ease;
@@ -2014,6 +1989,8 @@ sup.redstar {
     padding: 10px 10px 10px 40px;
     position: relative;
     margin-bottom: 5px;
+    background-color: var(--background-light-grey-bg-color);
+    border: solid 1px #E8E9EB;
     -webkit-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -9318,7 +9295,7 @@ input.razorpay-payment-button {
 }
 
 .categories-tab-main-block {
-    background: var(--linear-gradient-reverse-bg-color);
+    background: linear-gradient(45deg, #61c3da, #0000003d);
 }
 
 .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
