@@ -7,12 +7,14 @@
 Template Name: eClass
 Author: Media City
 -->
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]> -->
 <?php
 $language = Session::get('changed_language'); //or 'english' //set the system language
-$rtl = array('ar','he','ur', 'arc', 'az', 'dv', 'ku', 'fa'); //make a list of rtl languages
+$rtl = array('ar', 'he', 'ur', 'arc', 'az', 'dv', 'ku', 'fa'); //make a list of rtl languages
 ?>
 
 <html lang="en" @if (in_array($language,$rtl)) dir="rtl" @endif>
@@ -21,78 +23,80 @@ $rtl = array('ar','he','ur', 'arc', 'az', 'dv', 'ku', 'fa'); //make a list of rt
 <!-- theme styles -->
 
 
-
-
 @php
-if(Schema::hasTable('color_options')){
-  $color = App\ColorOption::first();
-}
+    if(Schema::hasTable('color_options')){
+      $color = App\ColorOption::first();
+    }
 @endphp
 @if(isset($color))
 
-<style type="text/css">
-  
-  .cirtificate-border-one { 
-     
-    border: 15px groove {{ $color['blue_bg'] }}; 
-    padding:20px;
-    background-color: var(--background-white-bg-color);
+    <style type="text/css">
 
-  }
-  .cirtificate-border-two {  
-    border: 5px double {{ $color['blue_bg'] }};
-    padding:20px;
-  }
-</style>
+        .cirtificate-border-one {
+
+            border: 15px groove{{ $color['blue_bg'] }};
+            padding: 20px;
+            background-color: var(--background-white-bg-color);
+
+        }
+
+        .cirtificate-border-two {
+            border: 5px double{{ $color['blue_bg'] }};
+            padding: 20px;
+        }
+    </style>
 
 @else
 
-<style type="text/css">
- .cirtificate-border-one { 
-    
-    border: 15px groove #0284A2;
-    padding:20px;
-    background-color: var(--background-white-bg-color);
+    <style type="text/css">
+        .cirtificate-border-one {
 
-  }
-  .cirtificate-border-two {  
-    border: 5px double #0284A2;
-    padding:20px;
-  }
+            border: 15px groove #0284A2;
+            padding: 20px;
+            background-color: var(--background-white-bg-color);
 
-</style>
+        }
+
+        .cirtificate-border-two {
+            border: 5px double #0284A2;
+            padding: 20px;
+        }
+
+    </style>
 
 @endif
 
 <style type="text/css">
 
-  * { font-family: DejaVu Sans, sans-serif; }
+    * {
+        font-family: DejaVu Sans, sans-serif;
+    }
 
-  .course-cirtificate {
-    text-align: center;
-  }
+    .course-cirtificate {
+        text-align: center;
+    }
 
- .cirtificate-heading {
-    font-size:50px; 
-    font-weight:bold;
-    font-style: normal;
-    margin-bottom: 20px;
-  }
-  
-  @font-face {
-    font-family: 'Great Vibes';
-    src: url('{{ public_path('GreatVibes-Regular.ttf') }}') format("ttf");
-  }
+    .cirtificate-heading {
+        font-size: 50px;
+        font-weight: bold;
+        font-style: normal;
+        margin-bottom: 20px;
+    }
 
-  .course-cirtificate {
-    padding: 10px 0;
-    background: #F7F8FA;
-  }
-  .cirtificate-heading {
-    color: #29303B;
-  }
+    @font-face {
+        font-family: 'Great Vibes';
+        src: url('{{ public_path('GreatVibes-Regular.ttf') }}') format("ttf");
+    }
 
-  
+    .course-cirtificate {
+        padding: 10px 0;
+        background: #F7F8FA;
+    }
+
+    .cirtificate-heading {
+        color: #29303B;
+    }
+
 
 </style>
 
@@ -111,29 +115,36 @@ if(Schema::hasTable('color_options')){
             <div class="col-lg-12">
                 <div class="cirtificate-border-one text-center">
                     <div class="cirtificate-border-two">
-                       <div class="cirtificate-heading" style="">{{ __('frontstaticword.CertificateofCompletion') }}</div>
+                        <div class="cirtificate-heading"
+                             style="">{{ __('frontstaticword.CertificateofCompletion') }}</div>
                         @php
                             $mytime = Carbon\Carbon::now();
                         @endphp
-                       <p class="cirtificate-detail" style="font-size:30px">{{ __('frontstaticword.Thisistocertifythat') }} <b>&nbsp;{{ Auth::User()['fname'] }}&nbsp;{{ Auth::User()['lname'] }}</b> {{ __('frontstaticword.successfullycompleted') }} <b>{{ $course['title'] }}</b> {{ __('frontstaticword.onlinecourseon') }} <br>
-                       
-                        <span style="font-size:25px">{{ date('jS F Y', strtotime($progress['updated_at'])) }}</span>
-                       
-                      </p>
+                        <p class="cirtificate-detail"
+                           style="font-size:30px">{{ __('frontstaticword.Thisistocertifythat') }}
+                            <b>&nbsp;{{ Auth::User()['fname'] }}
+                                &nbsp;{{ Auth::User()['lname'] }}</b> {{ __('frontstaticword.successfullycompleted') }}
+                            <b>{{ $course['title'] }}</b> {{ __('frontstaticword.onlinecourseon') }} <br>
 
-                       <span class="cirtificate-instructor">{{ ($course->user['fname']) }} {{ ($course->user['lname']) }}</span>
-                       <br>
-                       <span class="cirtificate-one">{{ ($course->user['fname']) }} {{ ($course->user['lname']) }}, {{ __('frontstaticword.Instructor') }}</span>
-                       <br>
-                       <span>&</span>
-                       <div class="cirtificate-logo">
-                        @if($gsetting['logo_type'] == 'L')
-                            <img src="{{ asset('images/logo/'.$gsetting['logo']) }}" class="img-fluid" alt="logo">
-                        @else()
-                            <a href="{{ url('/') }}"><b><div class="logotext">{{ $gsetting['project_title'] }}</div></b></a>
-                        @endif
-                      </div>
-                      
+                            <span style="font-size:25px">{{ date('jS F Y', strtotime($progress['updated_at'])) }}</span>
+
+                        </p>
+
+                        <span class="cirtificate-instructor">{{ ($course->user['fname']) }} {{ ($course->user['lname']) }}</span>
+                        <br>
+                        <span class="cirtificate-one">{{ ($course->user['fname']) }} {{ ($course->user['lname']) }}, {{ __('frontstaticword.Instructor') }}</span>
+                        <br>
+                        <span>&</span>
+                        <div class="cirtificate-logo">
+                            @if($gsetting['logo_type'] == 'L')
+                                <img src="{{ asset('images/logo/'.$gsetting['logo']) }}" class="img-fluid" alt="logo">
+                            @else()
+                                <a href="{{ url('/') }}"><b>
+                                        <div class="logotext">{{ $gsetting['project_title'] }}</div>
+                                    </b></a>
+                            @endif
+                        </div>
+
                     </div>
                 </div>
             </div>
