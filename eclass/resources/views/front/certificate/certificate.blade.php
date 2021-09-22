@@ -26,7 +26,7 @@
                                 $mytime = Carbon\Carbon::now();
                             @endphp
                             <p class="cirtificate-detail" style="font-size:30px">
-                                <br><span class="cirtificate-student">  <b>&nbsp;{{ Auth::User()['fname'] }}&nbsp;{{ Auth::User()['lname'] }}</b></span><br>
+                                <span class="cirtificate-student">  <b>&nbsp;{{ Auth::User()['fname'] }}&nbsp;{{ Auth::User()['lname'] }}</b></span><br>
                             </p>
 
                             <p class="cirtificate-detail" style="font-size:30px">
