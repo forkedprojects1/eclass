@@ -8048,15 +8048,15 @@ input.razorpay-payment-button {
 .cirtificate-border-one {
     font-family: "Times New Roman", Times, serif;
     padding: 20px;
-
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("images/certificate.png");
 
 }
 
 .cirtificate-border-two {
-    border: 5px solid #675d5d;
     /*padding: 20px;*/
-    background-image: url("images/certif99.png");
-    background-size: cover;
+
 }
 .cirtificate-id{
 
