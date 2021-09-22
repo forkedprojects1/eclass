@@ -36,9 +36,6 @@
                             </p>
 
                             <div class="row row6">
-                                <div class="col-sm-6 cirtificate-date">
-                                    DATE
-                                </div>
                                 <div class="col-sm-6 cirtificate-signature">
                                     SIGNATURE
                                 </div>
