@@ -53,17 +53,6 @@
                                 </div>
 
                             </div>
-                            <div class="row row6">
-                                <div class="col-sm-12 cirtificate-date cirtificate-id">
-                                    ID
-                                </div>
-                            </div>
-                            <div class="row row6">
-                                <div class="col-sm-12 cirtificate-date cirtificate-id">
-                                    CT{{ ($course->user['id']) }}_{{ strtotime($progress['updated_at']) }}
-
-                                </div>
-                            </div>
 
                         </div>
                     </div>
