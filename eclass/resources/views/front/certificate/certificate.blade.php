@@ -30,7 +30,6 @@
                             </p>
 
                             <p class="cirtificate-detail" style="font-size:30px">
-                                {{ __('frontstaticword.successfullycompleted') }}
                                 <br><b>{{ $course['title'] }}</b> <br>
 
 
