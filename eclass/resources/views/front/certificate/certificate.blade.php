@@ -25,8 +25,7 @@
                             @php
                                 $mytime = Carbon\Carbon::now();
                             @endphp
-                            <p class="cirtificate-detail" style="font-size:30px">This certificate is proudly presented
-                                to
+                            <p class="cirtificate-detail" style="font-size:30px">
                                 <br><span class="cirtificate-student">  <b>&nbsp;{{ Auth::User()['fname'] }}&nbsp;{{ Auth::User()['lname'] }}</b></span><br>
                             </p>
 
