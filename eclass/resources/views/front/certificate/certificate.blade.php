@@ -30,9 +30,9 @@
                             </p>
 
                             <p class="cirtificate-detail" style="font-size:20px">
-                                <br>Course Name = <b>{{ $course['title'] }}</b>
-                                <br>Certificate Id = <b>CT{{ ($course->user['id']) }}_{{ strtotime($progress['updated_at']) }}</b> <br>
-
+                                <br><br>Course Name = <b>{{ $course['title'] }}</b>
+                                <br>Certificate Id = <b>CT{{ ($course->user['id']) }}_{{ strtotime($progress['updated_at']) }}</b>
+                                <br>Course Type = <b>{{($course['level_tags'])}}</b> <br>
                             </p>
 
                             <div class="row row6">
