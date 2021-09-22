@@ -36,10 +36,6 @@
                             </p>
 
                             <div class="row row6">
-
-
-                            </div>
-                            <div class="row row6">
                                 <div class="col-sm-6">
                                     <span class="cirtificate-instructor" style="font-size:25px">{{ date('jS F Y', strtotime($progress['updated_at'])) }}</span>
                                 </div>
