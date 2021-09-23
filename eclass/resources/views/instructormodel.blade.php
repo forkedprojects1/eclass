@@ -78,7 +78,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="file">{{ __('frontstaticword.UploadResume') }}:<sup class="redstar">*</sup></label>
-                          <input type="file" class="form-control" name="file" id="file" value="" required>
+                          <input accept="application/pdf" type="file" class="form-control" name="file" id="file" value="" required>
                         </div>
                          <div class="form-group">
                           <label for="image">{{ __('frontstaticword.UploadImage') }}:<sup class="redstar">*</sup></label>
