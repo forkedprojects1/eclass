@@ -8074,9 +8074,8 @@ input.razorpay-payment-button {
 }
 
 .cirtificate-detail {
-    margin-bottom: 20px;
     font-size: 42px;
-    font-family: 'Arial', serif;
+    font-family: 'Muli', serif;
 }
 
 .cirtificate-instructor {
@@ -8106,6 +8105,7 @@ input.razorpay-payment-button {
     text-decoration-color: gold;
 }
 .cirtificate-student {
+    margin-top: 71px;
     /*text-decoration-line: underline;*/
     /*text-decoration-color: gold;*/
 }
