@@ -188,6 +188,8 @@ $rtl = array('ar','he','ur', 'arc', 'az', 'dv', 'ku', 'fa'); //make a list of rt
   var USER_ID = '{{  auth()->user()?auth()->user()->id:"" }}';
 </script>
 <script  src="{{ url('js/onesignal.js') }}"></script>
-
+<!-- This site is converting visitors into subscribers and customers with https://respond.io -->
+<script id="respondio__widget" src="https://cdn.respond.io/webchat/widget/widget.js?cId=b09c1305402fc31fabd16cc905ff3385282dc65999b2c521b52a0eb6299317e7"></script>
+<!-- https://respond.io -->
 
 @yield('custom-script')
