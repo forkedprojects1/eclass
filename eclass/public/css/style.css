@@ -8110,7 +8110,9 @@ input.razorpay-payment-button {
     /*text-decoration-line: underline;*/
     /*text-decoration-color: gold;*/
 }
-
+p.cirtificate-detail {
+    margin-bottom: 22px;
+}
 .row.row6{
     width: 75%;
 }
