@@ -1742,7 +1742,9 @@ max-width: 90%;
 }
 
 .product-learn-heading {
-    font-size: 22px;
+    font-size: 26px;
+    color: #61c3da;
+
 }
 
 .about-home-main-block .video-item {
