@@ -1148,9 +1148,9 @@
                     @if($item->status == 1)
                     <div class="course-bought-block">
                         <div class="row">
-                            <div class="col-lg-7 col-md-6 col-12">
+                            <div class="col-lg-12 col-md-12 col-12">
                                 <div class="row">
-                                    <div class="col-lg-4 col-sm-4 col-5">
+                                    <div class="col-lg-6 col-sm-6 col-5">
                                         <div class="course-bought-img">
                                             @if($item->preview_image !== NULL && $item->preview_image !== '')
                                                 <a href="{{ route('user.course.show',['id' => $item->id, 'slug' => $item->slug ]) }}"><img src="{{ asset('images/course/'.$item['preview_image']) }}" class="img-fluid" alt="blog"></a>
@@ -1159,95 +1159,91 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-sm-8 col-7">
+                                    <div class="col-lg-6 col-sm-6 col-7">
                                         <div class="course-name"><a href="{{ route('user.course.show',['id' => $item->id, 'slug' => $item->slug ]) }}">{{ str_limit($item['title'], $limit = 35, $end = '...') }}</a></div>
                                         <div class="course-update">{{ __('frontstaticword.LastUpdated') }} {{ date('jS F Y', strtotime($item['updated_at'])) }}</div>
+                                        <div class="course-user">
+                                            <ul>
+                                                <li><i class="fa fa-user"></i></li>
+                                                <li>{{ $item->order->count() }}</li>
+                                            </ul>
+                                        </div>
+                                        @if($item->type==1)
+
+                                            @if($item->discount_price == !NULL)
+                                                <div class="course-currency txt-rgt">
+                                                    <ul>
+                                                        @if($gsetting['currency_swipe'] == 1)
+                                                            <li class="rate"><i class="{{ $currency['icon'] }}"></i>{{ $item->discount_price }}</li>
+                                                            <li class="rate"><s><i class="{{ $currency['icon'] }}"></i>{{ $item['price'] }}</s></li>
+                                                        @else
+                                                            <li class="rate">{{ $item->discount_price }}<i class="{{ $currency['icon'] }}"></i></li>
+                                                            <li class="rate"><s>{{ $item['price'] }}<i class="{{ $currency['icon'] }}"></i></s></li>
+                                                        @endif
+
+                                                    </ul>
+                                                </div>
+                                            @else
+                                                <div class="course-currency txt-rgt">
+                                                    <ul>
+                                                        @if($gsetting['currency_swipe'] == 1)
+                                                            <li><i class="{{ $currency['icon'] }}"></i>{{ $item['price'] }}</li>
+                                                        @else
+                                                            <li>{{ $item['price'] }}<i class="{{ $currency['icon'] }}"></i></li>
+                                                        @endif
+                                                    </ul>
+                                                </div>
+                                            @endif
+                                        @else
+                                            <div class="course-currency txt-rgt">
+                                                <ul>
+                                                    <li>{{ __('frontstaticword.Free') }}</li>
+                                                </ul>
+                                            </div>
+                                        @endif
+                                        <div class="course-rate txt-rgt">
+                                            <ul>
+                                                <li>
+                                                    @if(Auth::check())
+                                                        @php
+                                                            $wishtt = App\Wishlist::where('user_id', Auth::User()->id)->where('course_id', $item->id)->first();
+                                                        @endphp
+                                                        @if ($wishtt == NULL)
+                                                            <div class="heart">
+                                                                <form id="demo-form2" method="post" action="{{ url('show/wishlist', $item->id) }}" data-parsley-validate
+                                                                      class="form-horizontal form-label-left">
+                                                                    {{ csrf_field() }}
+
+                                                                    <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
+                                                                    <input type="hidden" name="course_id"  value="{{$item->id}}" />
+
+                                                                    <button class="wishlisht-btn heart" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                                </form>
+                                                            </div>
+                                                        @else
+                                                            <div class="heart-two">
+                                                                <form id="demo-form2" method="post" action="{{ url('remove/wishlist', $item->id) }}" data-parsley-validate
+                                                                      class="form-horizontal form-label-left">
+                                                                    {{ csrf_field() }}
+
+                                                                    <input type="hidden" name="user_id"  value="{{Auth::user()->id}}" />
+                                                                    <input type="hidden" name="course_id"  value="{{$item->id}}" />
+
+                                                                    <button class="wishlisht-btn heart"  title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                                </form>
+                                                            </div>
+                                                        @endif
+                                                    @else
+                                                        <div class="heart"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a></div>
+                                                    @endif
+                                                </li>
+                                            </ul>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-2 col-md-1 col-4">
-                                <div class="course-user">
-                                    <ul>
-                                        <li><i class="fa fa-user"></i></li>
-                                        <li>{{ $item->order->count() }}</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-4">
-                                @if($item->type==1)
 
-                                    @if($item->discount_price == !NULL)
-                                        <div class="course-currency txt-rgt">
-                                            <ul>
-                                                @if($gsetting['currency_swipe'] == 1)
-                                                    <li class="rate"><i class="{{ $currency['icon'] }}"></i>{{ $item->discount_price }}</li>
-                                                    <li class="rate"><s><i class="{{ $currency['icon'] }}"></i>{{ $item['price'] }}</s></li>
-                                                @else
-                                                    <li class="rate">{{ $item->discount_price }}<i class="{{ $currency['icon'] }}"></i></li>
-                                                    <li class="rate"><s>{{ $item['price'] }}<i class="{{ $currency['icon'] }}"></i></s></li>
-                                                @endif
-
-                                            </ul>
-                                        </div>
-                                    @else
-                                        <div class="course-currency txt-rgt">
-                                            <ul>
-                                                @if($gsetting['currency_swipe'] == 1)
-                                                <li><i class="{{ $currency['icon'] }}"></i>{{ $item['price'] }}</li>
-                                                @else
-                                                <li>{{ $item['price'] }}<i class="{{ $currency['icon'] }}"></i></li>
-                                                @endif
-                                            </ul>
-                                        </div>
-                                    @endif
-                                @else
-                                    <div class="course-currency txt-rgt">
-                                        <ul>
-                                            <li>{{ __('frontstaticword.Free') }}</li>
-                                        </ul>
-                                    </div>
-                                @endif
-                            </div>
-                            <div class="col-lg-1 col-md-2 col-4">
-                                <div class="course-rate txt-rgt">
-                                    <ul>
-                                        <li>
-                                        @if(Auth::check())
-                                        @php
-                                            $wishtt = App\Wishlist::where('user_id', Auth::User()->id)->where('course_id', $item->id)->first();
-                                        @endphp
-                                        @if ($wishtt == NULL)
-                                            <div class="heart">
-                                                <form id="demo-form2" method="post" action="{{ url('show/wishlist', $item->id) }}" data-parsley-validate
-                                                    class="form-horizontal form-label-left">
-                                                    {{ csrf_field() }}
-
-                                                    <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
-                                                    <input type="hidden" name="course_id"  value="{{$item->id}}" />
-
-                                                    <button class="wishlisht-btn heart" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
-                                                </form>
-                                            </div>
-                                        @else
-                                            <div class="heart-two">
-                                                <form id="demo-form2" method="post" action="{{ url('remove/wishlist', $item->id) }}" data-parsley-validate
-                                                    class="form-horizontal form-label-left">
-                                                    {{ csrf_field() }}
-
-                                                    <input type="hidden" name="user_id"  value="{{Auth::user()->id}}" />
-                                                    <input type="hidden" name="course_id"  value="{{$item->id}}" />
-
-                                                    <button class="wishlisht-btn heart"  title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
-                                                </form>
-                                            </div>
-                                        @endif
-                                        @else
-                                            <div class="heart"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a></div>
-                                        @endif
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     @endif
