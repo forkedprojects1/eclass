@@ -439,9 +439,10 @@
 <!-- course header end -->
 <!-- course detail start -->
 <section id="about-product" class="about-product-main-block">
-    <div class="container">
+    <div class="container classebody">
+        <div class="col-lg-12">
         <div class="row">
-            <div class="col-lg-12">
+                <div class="col-sm-8">
                 @if($whatlearns->isNotEmpty())
                     <div class="product-learn-block">
                         <h3 class="product-learn-heading">{{ __('frontstaticword.Whatlearn') }}</h2>
@@ -1136,9 +1137,9 @@
 
 
 
+                </div>
 
-
-                <div class="students-bought btm-30">
+                <div class="col-sm-4 students-bought btm-30">
                     <h3>{{ __('frontstaticword.RecentCourses') }}</h3>
                     @php
                         $items = App\Course::orderBy('created_at','desc')->limit(5)->get()
@@ -2005,7 +2006,7 @@
                 @endauth
                 <!--Model close -->
             </div>
-
+            </div>
         </div>
     </div>
 </section>
