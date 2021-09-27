@@ -1746,7 +1746,9 @@ max-width: 90%;
     color: #61c3da;
 
 }
-
+.course-content-block.btm-30.top-20 h3{
+    color:#61c3da;
+}
 .about-home-main-block .video-item {
     text-align: center;
     border: 5px solid #FFF;
