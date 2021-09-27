@@ -26,27 +26,18 @@
                                 $mytime = Carbon\Carbon::now();
                             @endphp
                             <p class="cirtificate-detail" style="font-size:30px">
-                                <div class="cirtificate-student">  <b>&nbsp;{{ Auth::User()['fname'] }}&nbsp;{{ Auth::User()['lname'] }}</b></div><br>
+                                <div class="cirtificate-student">  <b>&nbsp;{{ Auth::User()['fname'] }}&nbsp;{{ Auth::User()['lname'] }}</b></div>
+                            <br>
                             </p>
-
-                            <p class="cirtificate-detail" style="font-size:20px">
-                                <br><br>Course Name = <b>{{ $course['title'] }}</b>
-                                <br>Certificate Id = <b>CT{{ ($course->user['id']) }}_{{ strtotime($progress['updated_at']) }}</b>
+                           <b style="font-size: 40px">{{ $course['title'] }}</b>
+                            <p class="cirtificate-detail" style="font-size:14px">
+                            Certificate Id = <b style="font-size: 16px">CT{{ ($course->user['id']) }}_{{ strtotime($progress['updated_at']) }}</b><br>
                                 <br>Course Type = <b>{{($course['level_tags'])}}</b>
                             </p>
 
-                            <div class="row">
-                                <div class="col-sm-1">
-                                </div>
-                                <div class="col-sm-5">
-                                    <span class="cirtificate-instructor" style="font-size:25px">{{ date('jS F Y', strtotime($progress['updated_at'])) }}</span>
-                                </div>
-                                <div class="col-sm-3">
-                                    <span class="cirtificate-instructor">{{ ($course->user['fname']) }} {{ ($course->user['lname']) }}</span>
-                                </div>
-                                <div class="col-sm-3">
-                                </div>
-
+                            <div class="row col-sm-12">
+                                    <div class="col-sm-7 cirtificate-instructor certtt4" style="font-size:25px">{{ date('jS F Y', strtotime($progress['updated_at'])) }}</div>
+                                    <span class="col-sm-5 cirtificate-instructor certtt">{{ ($course->user['fname']) }} {{ ($course->user['lname']) }}</span>
                             </div>
 
                         </div>
