@@ -1262,7 +1262,7 @@
 
                     <div class="about-instructor btm-40">
                         <div class="row">
-                            <div class="col-lg-2 col-5">
+                            <div class="col-lg-12 col-5">
                                 <div class="instructor-img btm-30">
 
                                     @if($course->user->user_img != null || $course->user->user_img !='')
