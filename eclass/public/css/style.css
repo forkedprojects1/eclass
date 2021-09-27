@@ -1719,6 +1719,9 @@ sup.redstar {
 .product-learn-block {
 
 }
+.container.classebody{
+max-width: 90%;
+}
 
 .product-learn-dtl ul li {
     margin-bottom: 20px;
