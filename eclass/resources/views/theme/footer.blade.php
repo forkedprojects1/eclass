@@ -6,6 +6,7 @@
                     $widgets = App\WidgetSetting::first();
                 @endphp
                 <div class="col-lg-4 col-md-6 col-12">
+                    <div style="color: white">{{ __('frontstaticword.DescriptionWebsite') }}</div>
                     @php
                         $settings = App\Setting::first();
                     @endphp
@@ -133,6 +134,7 @@
                 <div class="col-md-6">
                     <div class="logo-footer">
                         <ul>
+
 
                             <li><?php echo 'Copyright © ' . date("Y") . ' eClass ';?></li>
                         </ul>
