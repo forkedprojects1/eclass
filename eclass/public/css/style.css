@@ -10302,3 +10302,8 @@ input[type="text"].search-input {
 .faq-block .second-accordion .card-body .btn-light {
     color: #FFF !important;
 }
+
+/*remove border sections titles  course overview*/
+.faq-block .btn{
+    border:0px
+}
