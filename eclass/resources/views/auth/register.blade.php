@@ -86,7 +86,7 @@
                     @if($gsetting->gitlab_login_enable == 1)
                     <div class="col-lg-6"> 
                         <div class="signin-link btm-10">
-                            <a href="{{ url('/auth/gitlab') }}" target="_blank" title="gitlab" class="btn btn-white" title="gitlab"><i class="fab fa-gitlab"></i>{{ __('frontstaticword.ContinuewithGitLab') }}</a>
+                            <a href="{{ url('/login/github') }}" target="_blank" title="gitlab" class="btn btn-white" title="gitlab"><i class="fab fa-gitlab"></i>{{ __('frontstaticword.ContinuewithGitLab') }}</a>
                         </div>
                     </div>
                     @endif

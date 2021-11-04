@@ -145,8 +145,8 @@
                             <div class="best-seller">{{ $recent_course['level_tags'] }}</div>
                             @endif
                             <div class="view-dtl">
-                                <div class="view-heading"><a href="{{ route('user.course.show',['id' => $recent_course->id, 'slug' => $recent_course->slug ]) }}">{{ str_limit($recent_course->title, $limit = 30, $end = '...') }}</a></div>
-                                <p class=""><a herf="#">{{ __('frontstaticword.by') }} @if(isset($recent_course->user)) {{ $recent_course->user['fname'] }} {{ $recent_course->user['lname'] }} @endif</a></p>
+                                <div class="view-heading btm-10"><a href="{{ route('user.course.show',['id' => $recent_course->id, 'slug' => $recent_course->slug ]) }}">{{ str_limit($recent_course->title, $limit = 30, $end = '...') }}</a></div>
+                                <p class="btm-10"><a herf="#">{{ __('frontstaticword.by') }} @if(isset($recent_course->user)) {{ $recent_course->user['fname'] }} {{ $recent_course->user['lname'] }} @endif</a></p>
                                 <div class="rating">
                                     <ul>
                                         <li>

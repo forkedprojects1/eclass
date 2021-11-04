@@ -988,11 +988,23 @@
                 </div>
                 <div class="description-block btm-30">
                     <h3>{{ __('frontstaticword.Description') }}</h3>
-
-                    <p>{!! $course->detail !!}</p>
+                    <p>
+                        <?php  $coursedetaildecoded=$course->detail?>
+                        <?php $se=html_entity_decode($course->detail);?>
+                    @if(strlen($se) > 100)
+                        <?php echo htmlentities(substr($coursedetaildecoded,0,100))?>
+                        <span class="read-more-show hide_content"><br>+&nbsp;See More</span>
+                        <span class="read-more-content"> {{substr($course->detail,100,strlen($course->detail))}}
+                            <span class="read-more-hide hide_content"><br>-&nbsp;See Less</span> </span>
+                    @else
+                        {{$course->detail}}
+                    @endif
+                    </p>
+                   <p>{!! $course->detail !!}</p>
 
                 </div>
 
+                comments
 
                @php
                     $alreadyrated = App\ReviewRating::where('course_id', $course->id)->limit(1)->first();
@@ -1139,6 +1151,7 @@
 
                 </div>
 
+
                 <div class="col-sm-4 students-bought btm-30">
                     <h3>{{ __('frontstaticword.RecentCourses') }}</h3>
                     @php
@@ -1162,7 +1175,7 @@
                                     <div class="col-lg-6 col-sm-6 col-7">
                                         <div class="course-name"><a href="{{ route('user.course.show',['id' => $item->id, 'slug' => $item->slug ]) }}">{{ str_limit($item['title'], $limit = 35, $end = '...') }}</a></div>
                                         <div class="course-update">{{ __('frontstaticword.LastUpdated') }} {{ date('jS F Y', strtotime($item['updated_at'])) }}</div>
-                                        <div class="course-user">
+                                        <div class=" col-lg-2 course-user">
                                             <ul>
                                                 <li><i class="fa fa-user"></i></li>
                                                 <li>{{ $item->order->count() }}</li>
@@ -1201,7 +1214,7 @@
                                                 </ul>
                                             </div>
                                         @endif
-                                        <div class="course-rate txt-rgt">
+                                        <div class="course-rate col-lg-2 txt-rgt">
                                             <ul>
                                                 <li>
                                                     @if(Auth::check())

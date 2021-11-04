@@ -14,9 +14,9 @@
         <div class="box-body">
           <div class="table-responsive">
             <table id="example1" class="table table-bordered table-striped">
-              
+
               <thead>
-               
+
                 <tr>
                 	<th>{{ __('adminstaticword.Image') }}</th>
                   <th>{{ __('adminstaticword.Name') }}</th>
@@ -27,10 +27,11 @@
                   <th>{{ __('adminstaticword.Delete') }}</th>
                 </tr>
               </thead>
+
               <tbody>
                 @foreach($items as $item)
                 <tr>
-                	<td><img src="{{ asset('images/instructor/'.$item->image)}}" class="img-responsive"></td> 
+                	<td><img src="{{ asset('images/instructor/'.$item->image)}}" class="img-responsive"></td>
                   <td>{{$item->fname}}</td>
                   <td>{{$item->email}}</td>
                   <td>{{ str_limit($item->detail, $limit= 50, $end = '...')}}</td>
@@ -52,7 +53,7 @@
                   </td>
 
                   @endforeach
-               
+
                 </tr>
               </tfoot>
             </table>

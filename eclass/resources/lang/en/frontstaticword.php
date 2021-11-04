@@ -362,7 +362,7 @@ return [
     'LiveClass' => 'Live Class',
     'Cancel' => 'Cancel',
     'Request' => 'Request',
-    'UploadResume' => 'Upload Resume',
+    'UploadResume' => 'Upload Resume (PDF)',
     'UploadImage' => 'Upload Image',
     'Expandallsections' => 'Expand all sections',
     'Collapseallsections' => 'Collapse all sections',
@@ -374,7 +374,8 @@ return [
     'Featured' => 'Featured',
     'LowtoHigh' => 'Low to High',
     'HightoLow' => 'High to Low',
-    'Paid' => 'Paid'
+    'Paid' => 'Paid',
+    'DescriptionWebsite'=>'CoursyTech est une centre de formation et de consulting qui offre des formations principalement dans le domaine des nouvelles technologies. Nos experts vous accompagnent pour faciliter votre reconversion ou insertion professionnelle. Nos sessions répondent à vos besoins spécifiques et ciblent les domaines les plus en demande sur le marché.'
     
     
 

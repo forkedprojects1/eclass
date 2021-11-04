@@ -73,7 +73,7 @@
 					@endif
 					logoPath:"",
 					hideLogoWithController:"yes",
-					logoPosition:"topRight",
+					logoPosition:"bottomRight",
 					logoLink:"{{ config('app.url') }}",
 					logoPath:"",
 					logoMargins:10,

@@ -20,17 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd66fc8e-8b04-426f-893a-b5a271c9c190" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/frontstaticword.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/frontstaticword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/instructor/all_instructor/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/instructor/all_instructor/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/course_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/course_detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/watch.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/watch.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -305,6 +310,9 @@
       <option name="presentableId" value="Default" />
       <updated>1624813600449</updated>
       <workItem from="1624813601470" duration="3985000" />
+      <workItem from="1635445122670" duration="4681000" />
+      <workItem from="1635523262983" duration="666000" />
+      <workItem from="1635792597716" duration="11309000" />
     </task>
     <servers />
   </component>
@@ -321,19 +329,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="790" y="242" key="RollbackChangesDialog" timestamp="1624816171915">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="790" y="242" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1624816171915" />
-    <state x="1146" y="276" width="587" height="534" key="find.popup" timestamp="1624817553432">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1146" y="276" width="587" height="534" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1624817553432" />
-    <state x="1103" y="240" width="672" height="678" key="search.everywhere.popup" timestamp="1624816119687">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1103" y="240" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1624816119687" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
