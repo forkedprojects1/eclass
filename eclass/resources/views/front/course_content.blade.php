@@ -572,12 +572,7 @@
 
                                                                                     {{ __('frontstaticword.min') }}
 
-                                                                                    @if($coursechapter->file != NULL)
-                                                                                        <a href="{{ asset('files/material/'.$coursechapter->file) }}"
-                                                                                           download="{{$coursechapter->file}}"
-                                                                                           title="Learning Material"><i
-                                                                                                    class="fa fa-download"></i></a>
-                                                                                    @endif
+
                                                                                 </div>
 
                                                                             </div>
@@ -724,12 +719,7 @@
                                                                             {{ $class->size }} Mb
                                                                         @endif
 
-                                                                        @if($class->file != NULL)
-                                                                            <a href="{{ asset('files/class/material/'.$class->file) }}"
-                                                                               download="{{$class->file}}"
-                                                                               title="Learning Material"><i
-                                                                                        class="fa fa-download"></i></a>
-                                                                        @endif
+
                                                                     </td>
                                                                 </tr>
                                                                 </tbody>
@@ -1912,11 +1902,6 @@
                                                                             </div>
                                                                             <div class="col-md-6">
                                                                                 <div class="assignment-delete-block text-right">
-
-                                                                                    <a href="{{ asset('files/assignment/'.$assign->assignment) }}"
-                                                                                       download="{{$assign->assignment}}"
-                                                                                       title="Download"> <i
-                                                                                                class="fa fa-download"></i></a>
 
 
                                                                                     <form method="post"
