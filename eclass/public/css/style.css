@@ -10307,3 +10307,7 @@ input[type="text"].search-input {
 .faq-block .btn{
     border:0px
 }
+
+i.fa.fa-download{
+    display:none
+}
