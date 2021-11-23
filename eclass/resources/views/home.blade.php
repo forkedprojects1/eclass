@@ -117,7 +117,7 @@
 @if(Auth::check())
 @if( isset($recent_course_id) )
 <section id="student" class="student-main-block top-40">
-    <div class="container">
+    <div class="container-fluid">
 
         @if($total_count >= '0' &&  $recent_course->status == 1 && $recent_course->featured == 1)
         <h4 class="student-heading">{{ __('frontstaticword.RecentlyViewedCourses') }}</h4>
@@ -607,7 +607,7 @@ $cors = App\Course::where('status', '1')->where('featured', '1')->get();
 @endphp
 @if( ! $cors->isEmpty() )
 <section id="student" class="student-main-block">
-    <div class="container">
+    <div class="container-fluid">
         <h4 class="student-heading">{{ __('frontstaticword.FeaturedCourses') }}</h4>
         <div id="student-view-slider" class="student-view-slider-main-block owl-carousel">
             @foreach($cors as $c)
@@ -961,7 +961,7 @@ $cors = App\Course::where('status', '1')->where('featured', '1')->get();
 @endphp
 @if( ! $corsall->isEmpty() )
 <section id="student" class="student-main-block">
-<div class="container">
+<div class="container-fluid">
 <h4 class="student-heading">{{ __('frontstaticword.AllCourses') }}</h4>
     <div id="student-view-slider-allcourses" class="student-main-block owl-carousel">
         @foreach($corsall as $call)

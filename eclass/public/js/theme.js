@@ -128,7 +128,7 @@
             dots: false,
         },
         1100: {
-            items: 4,
+            items: 10,
             nav: true,
             dots: false,
         }
@@ -138,8 +138,8 @@
 //Student-view-slider-allcourses
     $("#student-view-slider-allcourses").owlCarousel({
         loop: true,
-        items: 5,
-        dots: false,
+        items: 10,
+        dots: true,
         nav: true,
         autoplayTimeout: 10000,
         smartSpeed: 2000,
@@ -173,9 +173,9 @@
                 dots: false,
             },
             1100: {
-                items: 4,
+                items: 10,
                 nav: true,
-                dots: false,
+                dots: true,
             }
         }
     });
@@ -762,7 +762,7 @@
             dots: false,
         },
         1100: {
-            items: 4,
+            items: 10,
             nav: true,
             dots: false,
         }
