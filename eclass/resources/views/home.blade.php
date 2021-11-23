@@ -118,13 +118,13 @@
 @if( isset($recent_course_id) )
 <section id="student" class="student-main-block top-40">
     <div class="container">
-        
+
         @if($total_count >= '0' &&  $recent_course->status == 1 && $recent_course->featured == 1)
         <h4 class="student-heading">{{ __('frontstaticword.RecentlyViewedCourses') }}</h4>
         <div id="recent-courses-slider" class="student-view-slider-main-block owl-carousel">
             @foreach($recent_course_id as $view)
             @php
-        
+
             $recent_course = App\Course::where('id', $view)->first();
 
             @endphp
@@ -150,14 +150,14 @@
                                 <div class="rating">
                                     <ul>
                                         <li>
-                                            <?php 
+                                            <?php
                                             $learn = 0;
                                             $price = 0;
                                             $value = 0;
                                             $sub_total = 0;
                                             $sub_total = 0;
                                             $reviews = App\ReviewRating::where('course_id',$recent_course->id)->get();
-                                            ?> 
+                                            ?>
                                             @if(!empty($reviews[0]))
                                             <?php
                                             $count =  App\ReviewRating::where('course_id',$recent_course->id)->count();
@@ -173,19 +173,19 @@
                                             $rat = $sub_total/$count;
                                             $ratings_var = ($rat*100)/5;
                                             ?>
-                            
+
                                             <div class="pull-left">
                                                 <div class="star-ratings-sprite"><span style="width:<?php echo $ratings_var; ?>%" class="star-ratings-sprite-rating"></span>
                                                 </div>
                                             </div>
-                                       
-                                             
+
+
                                             @else
                                                 <div class="pull-left">{{ __('frontstaticword.NoRating') }}</div>
                                             @endif
                                         </li>
                                         <!-- overall rating-->
-                                        <?php 
+                                        <?php
                                         $learn = 0;
                                         $price = 0;
                                         $value = 0;
@@ -204,16 +204,16 @@
                                         }
 
                                         $count = ($count*3) * 5;
-                                         
+
                                         if($count != "")
                                         {
                                             $rat = $sub_total/$count;
-                                     
+
                                             $ratings_var = ($rat*100)/5;
-                                   
+
                                             $overallrating = ($ratings_var/2)/10;
                                         }
-                                         
+
                                         ?>
 
                                         @php
@@ -236,7 +236,7 @@
                                                 echo "0";
                                             }
                                         @endphp)
-                                    </li> 
+                                    </li>
                                     </ul>
                                 </div>
                                 @if( $recent_course->type == 1)
@@ -254,7 +254,7 @@
                                                     <li><a><b>{{ $recent_course->discount_price }}<i class="{{ $currency->icon }}"></i></b></a></li>&nbsp;
                                                     <li><a><b><strike>{{ $recent_course->price }}<i class="{{ $currency->icon }}"></i></strike></b></a></li>
                                                 @endif
-                                                
+
                                             @else
                                                 @if($gsetting['currency_swipe'] == 1)
                                                     <li><a><b><i class="{{ $currency->icon }}"></i>{{ $recent_course->price }}</b></a></li>
@@ -280,7 +280,7 @@
                                                 @endphp
                                                 @if ($wish == NULL)
                                                     <li class="protip-wish-btn">
-                                                        <form id="demo-form2" method="post" action="{{ url('show/wishlist', $recent_course->id) }}" data-parsley-validate 
+                                                        <form id="demo-form2" method="post" action="{{ url('show/wishlist', $recent_course->id) }}" data-parsley-validate
                                                             class="form-horizontal form-label-left">
                                                             {{ csrf_field() }}
 
@@ -292,7 +292,7 @@
                                                     </li>
                                                 @else
                                                     <li class="protip-wish-btn-two">
-                                                        <form id="demo-form2" method="post" action="{{ url('remove/wishlist', $recent_course->id) }}" data-parsley-validate 
+                                                        <form id="demo-form2" method="post" action="{{ url('remove/wishlist', $recent_course->id) }}" data-parsley-validate
                                                             class="form-horizontal form-label-left">
                                                             {{ csrf_field() }}
 
@@ -302,7 +302,7 @@
                                                             <button class="wishlisht-btn" title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
                                                         </form>
                                                     </li>
-                                                @endif 
+                                                @endif
                                             @else
                                                 <li class="protip-wish-btn"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a></li>
                                             @endif
@@ -312,14 +312,14 @@
                             </div>
                         </div>
                     </div>
-                    
-                </div> 
+
+                </div>
               @endif
             @endif
             @endforeach
         </div>
         @endif
-        
+
     </div>
 </section>
 @endif
@@ -954,6 +954,360 @@ $cors = App\Course::where('status', '1')->where('featured', '1')->get();
 </section>
 @endif
 <!-- Students end -->
+
+<!-- All Courses start -->
+@php
+    $corsall = App\Course::where('status', '1')->get();
+@endphp
+@if( ! $corsall->isEmpty() )
+<section id="student" class="student-main-block">
+<div class="container">
+<h4 class="student-heading">{{ __('frontstaticword.AllCourses') }}</h4>
+    <div id="student-view-slider-allcourses" class="student-main-block owl-carousel">
+        @foreach($corsall as $call)
+            @if($call->status == 1)
+                <div class="item student-view-block student-view-block-1">
+                    <div class="genre-slide-image @if($gsetting['course_hover'] == 1) protip @endif" data-pt-placement="outside" data-pt-interactive="false" data-pt-title="#prime-next-item-description-block{{$call->id}}">
+                        <div class="view-block">
+                            <div class="view-img">
+                                @if($call['preview_image'] !== NULL && $call['preview_image'] !== '')
+                                    <a href="{{ route('user.course.show',['id' => $call->id, 'slug' => $call->slug ]) }}"><img data-src="{{ asset('images/course/'.$call['preview_image']) }}" alt="course" class="img-fluid owl-lazy"></a>
+                                @else
+                                    <a href="{{ route('user.course.show',['id' => $call->id, 'slug' => $call->slug ]) }}"><img data-src="{{ Avatar::create($call->title)->toBase64() }}" alt="course" class="img-fluid owl-lazy"></a>
+                                @endif
+                            </div>
+                            @if($call['level_tags'] == !NULL)
+                                <div class="best-seller">{{ $call['level_tags'] }}</div>
+                            @endif
+                            <div class="view-dtl">
+                                <div class="view-heading btm-10"><a href="{{ route('user.course.show',['id' => $call->id, 'slug' => $call->slug ]) }}">{{ str_limit($call->title, $limit = 30, $end = '...') }}</a></div>
+                                <p class="btm-10"><a herf="#">{{ __('frontstaticword.by') }} @if(isset($call->user)) {{ $call->user['fname'] }} {{ $call->user['lname'] }} @endif</a></p>
+                                <div class="rating">
+                                    <ul>
+                                        <li>
+                                            <?php
+                                            $learn = 0;
+                                            $price = 0;
+                                            $value = 0;
+                                            $sub_total = 0;
+                                            $sub_total = 0;
+                                            $reviews = App\ReviewRating::where('course_id',$call->id)->get();
+                                            ?>
+                                            @if(!empty($reviews[0]))
+                                                <?php
+                                                $count =  App\ReviewRating::where('course_id',$call->id)->count();
+
+                                                foreach($reviews as $review){
+                                                    $learn = $review->price*5;
+                                                    $price = $review->price*5;
+                                                    $value = $review->value*5;
+                                                    $sub_total = $sub_total + $learn + $price + $value;
+                                                }
+
+                                                $count = ($count*3) * 5;
+                                                $rat = $sub_total/$count;
+                                                $ratings_var = ($rat*100)/5;
+                                                ?>
+
+                                                <div class="pull-left">
+                                                    <div class="star-ratings-sprite"><span style="width:<?php echo $ratings_var; ?>%" class="star-ratings-sprite-rating"></span>
+                                                    </div>
+                                                </div>
+
+
+                                            @else
+                                                <div class="pull-left">{{ __('frontstaticword.NoRating') }}</div>
+                                            @endif
+                                        </li>
+                                        <!-- overall rating-->
+                                        <?php
+                                        $learn = 0;
+                                        $price = 0;
+                                        $value = 0;
+                                        $sub_total = 0;
+                                        $count =  count($reviews);
+                                        $onlyrev = array();
+
+                                        $reviewcount = App\ReviewRating::where('course_id', $call->id)->WhereNotNull('review')->get();
+
+                                        foreach($reviews as $review){
+
+                                            $learn = $review->learn*5;
+                                            $price = $review->price*5;
+                                            $value = $review->value*5;
+                                            $sub_total = $sub_total + $learn + $price + $value;
+                                        }
+
+                                        $count = ($count*3) * 5;
+
+                                        if($count != "")
+                                        {
+                                            $rat = $sub_total/$count;
+
+                                            $ratings_var = ($rat*100)/5;
+
+                                            $overallrating = ($ratings_var/2)/10;
+                                        }
+
+                                        ?>
+
+                                        @php
+                                            $reviewsrating = App\ReviewRating::where('course_id', $call->id)->first();
+                                        @endphp
+                                        @if(!empty($reviewsrating))
+                                            <li>
+                                                <b>{{ round($overallrating, 1) }}</b>
+                                            </li>
+                                        @endif
+                                        <li>
+                                            (@php
+                                                $data = App\ReviewRating::where('course_id', $call->id)->get();
+                                                if(count($data)>0){
+
+                                                    echo count($data);
+                                                }
+                                                else{
+
+                                                    echo "0";
+                                                }
+                                            @endphp)
+                                        </li>
+                                    </ul>
+                                </div>
+                                @if( $call->type == 1)
+                                    <div class="rate text-right">
+                                        <ul>
+                                            @php
+                                                $currency = App\Currency::first();
+                                            @endphp
+
+                                            @if($call->discount_price == !NULL)
+                                                @if($gsetting['currency_swipe'] == 1)
+                                                    <li><a><b><i class="{{ $currency->icon }}"></i>{{ $call->discount_price }}</b></a></li>&nbsp;
+                                                    <li><a><b><strike><i class="{{ $currency->icon }}"></i>{{ $call->price }}</strike></b></a></li>
+                                                @else
+                                                    <li><a><b>{{ $call->discount_price }}<i class="{{ $currency->icon }}"></i></b></a></li>&nbsp;
+                                                    <li><a><b><strike>{{ $call->price }}<i class="{{ $currency->icon }}"></i></strike></b></a></li>
+                                                @endif
+
+                                            @else
+                                                @if($gsetting['currency_swipe'] == 1)
+                                                    <li><a><b><i class="{{ $currency->icon }}"></i>{{ $call->price }}</b></a></li>
+                                                @else
+                                                    <li><a><b>{{ $call->price }}<i class="{{ $currency->icon }}"></i></b></a></li>
+                                                @endif
+                                            @endif
+                                        </ul>
+                                    </div>
+                                @else
+                                    <div class="rate text-right">
+                                        <ul>
+                                            <li><a><b>{{ __('frontstaticword.Free') }}</b></a></li>
+                                        </ul>
+                                    </div>
+                                @endif
+                                <div class="img-wishlist">
+                                    <div class="protip-wishlist">
+                                        <ul>
+                                            @if(Auth::check())
+                                                @php
+                                                    $wish = App\Wishlist::where('user_id', Auth::User()->id)->where('course_id', $call->id)->first();
+                                                @endphp
+                                                @if ($wish == NULL)
+                                                    <li class="protip-wish-btn">
+                                                        <form id="demo-form2" method="post" action="{{ url('show/wishlist', $call->id) }}" data-parsley-validate
+                                                              class="form-horizontal form-label-left">
+                                                            {{ csrf_field() }}
+
+                                                            <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
+                                                            <input type="hidden" name="course_id"  value="{{$call->id}}" />
+
+                                                            <button class="wishlisht-btn" title="Add to wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                        </form>
+                                                    </li>
+                                                @else
+                                                    <li class="protip-wish-btn-two">
+                                                        <form id="demo-form2" method="post" action="{{ url('remove/wishlist', $call->id) }}" data-parsley-validate
+                                                              class="form-horizontal form-label-left">
+                                                            {{ csrf_field() }}
+
+                                                            <input type="hidden" name="user_id"  value="{{Auth::User()->id}}" />
+                                                            <input type="hidden" name="course_id"  value="{{$call->id}}" />
+
+                                                            <button class="wishlisht-btn" title="Remove from Wishlist" type="submit"><i class="fa fa-heart rgt-10"></i></button>
+                                                        </form>
+                                                    </li>
+                                                @endif
+                                            @else
+                                                <li class="protip-wish-btn"><a href="{{ route('login') }}" title="heart"><i class="fa fa-heart rgt-10"></i></a></li>
+                                            @endif
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="prime-next-item-description-block{{$call->id}}" class="prime-description-block">
+                        <div class="prime-description-under-block">
+                            <div class="prime-description-under-block">
+                                <h5 class="description-heading">{{ $call['title'] }}</h5>
+                                <div class="protip-img">
+                                    @if($call['preview_image'] !== NULL && $call['preview_image'] !== '')
+                                        <a href="{{ route('user.course.show',['id' => $call->id, 'slug' => $call->slug ]) }}"><img src="{{ asset('images/course/'.$call['preview_image']) }}" alt="student" class="img-fluid">
+                                        </a>
+                                    @else
+                                        <a href="{{ route('user.course.show',['id' => $call->id, 'slug' => $call->slug ]) }}"><img src="{{ Avatar::create($call->title)->toBase64() }}" alt="student" class="img-fluid">
+                                        </a>
+                                    @endif
+                                </div>
+
+                                <ul class="description-list">
+                                    <li>{{ __('frontstaticword.Classes') }}:
+                                        @php
+                                            $data = App\CourseClass::where('course_id', $call->id)->get();
+                                            if(count($data)>0){
+
+                                                echo count($data);
+                                            }
+                                            else{
+
+                                                echo "0";
+                                            }
+                                        @endphp
+                                    </li>
+                                    &nbsp;
+                                    <li>
+                                        @if( $call->type == 1)
+                                            <div class="rate text-right">
+                                                <ul>
+                                                    @php
+                                                        $currency = App\Currency::first();
+                                                    @endphp
+
+                                                    @if($call->discount_price == !NULL)
+                                                        @if($gsetting['currency_swipe'] == 1)
+                                                            <li><a><b><i class="{{ $currency->icon }}"></i>{{ $call->discount_price }}</b></a></li>&nbsp;
+                                                            <li><a><b><strike><i class="{{ $currency->icon }}"></i>{{ $call->price }}</strike></b></a></li>
+                                                        @else
+                                                            <li><a><b>{{ $call->discount_price }}<i class="{{ $currency->icon }}"></i></b></a></li>&nbsp;
+                                                            <li><a><b><strike>{{ $call->price }}<i class="{{ $currency->icon }}"></i></strike></b></a></li>
+                                                        @endif
+
+                                                    @else
+                                                        @if($gsetting['currency_swipe'] == 1)
+                                                            <li><a><b><i class="{{ $currency->icon }}"></i>{{ $call->price }}</b></a></li>
+                                                        @else
+                                                            <li><a><b>{{ $call->price }}<i class="{{ $currency->icon }}"></i></b></a></li>
+                                                        @endif
+                                                    @endif
+                                                </ul>
+                                            </div>
+                                        @else
+                                            <div class="rate text-right">
+                                                <ul>
+                                                    <li><a><b>{{ __('frontstaticword.Free') }}</b></a></li>
+                                                </ul>
+                                            </div>
+                                        @endif
+                                    </li>
+                                </ul>
+
+                                <div class="main-des">
+                                    <p>{{ $call->short_detail }}</p>
+                                </div>
+                                <div class="des-btn-block">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            @if($call->type == 1)
+                                                @if(Auth::check())
+                                                    @if(Auth::User()->role == "admin")
+                                                        <div class="protip-btn">
+                                                            <a href="{{ route('course.content',['id' => $call->id, 'slug' => $call->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                        </div>
+                                                    @else
+                                                        @php
+                                                            $order = App\Order::where('user_id', Auth::User()->id)->where('course_id', $call->id)->first();
+                                                        @endphp
+                                                        @if(!empty($order) && $order->status == 1)
+                                                            <div class="protip-btn">
+                                                                <a href="{{ route('course.content',['id' => $call->id, 'slug' => $call->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                            </div>
+                                                        @else
+                                                            @php
+                                                                $cart = App\Cart::where('user_id', Auth::User()->id)->where('course_id', $call->id)->first();
+                                                            @endphp
+                                                            @if(!empty($cart))
+                                                                <div class="protip-btn">
+                                                                    <form id="demo-form2" method="post" action="{{ route('remove.item.cart',$cart->id) }}">
+                                                                        {{ csrf_field() }}
+
+                                                                        <div class="box-footer">
+                                                                            <button type="submit" class="btn btn-primary">{{ __('frontstaticword.RemoveFromCart') }}</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            @else
+                                                                <div class="protip-btn">
+                                                                    <form id="demo-form2" method="post" action="{{ route('addtocart',['course_id' => $call->id, 'price' => $call->price, 'discount_price' => $call->discount_price ]) }}"
+                                                                          data-parsley-validate class="form-horizontal form-label-left">
+                                                                        {{ csrf_field() }}
+
+                                                                        <input type="hidden" name="category_id"  value="{{$call->category['id']}}" />
+
+                                                                        <div class="box-footer">
+                                                                            <button type="submit" class="btn btn-primary">{{ __('frontstaticword.AddToCart') }}</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            @endif
+                                                        @endif
+                                                    @endif
+                                                @else
+                                                    <div class="protip-btn">
+                                                        <a href="{{ route('login') }}" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;{{ __('frontstaticword.AddToCart') }}</a>
+                                                    </div>
+                                                @endif
+                                            @else
+                                                @if(Auth::check())
+                                                    @if(Auth::User()->role == "admin")
+                                                        <div class="protip-btn">
+                                                            <a href="{{ route('course.content',['id' => $call->id, 'slug' => $call->slug ]) }}" class="btn btn-secondary" title="course">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                        </div>
+                                                    @else
+                                                        @php
+                                                            $enroll = App\Order::where('user_id', Auth::User()->id)->where('course_id', $call->id)->first();
+                                                        @endphp
+                                                        @if($enroll == NULL)
+                                                            <div class="protip-btn">
+                                                                <a href="{{url('enroll/show',$call->id)}}" class="btn btn-primary" title="Enroll Now">{{ __('frontstaticword.EnrollNow') }}</a>
+                                                            </div>
+                                                        @else
+                                                            <div class="protip-btn">
+                                                                <a href="{{ route('course.content',['id' => $call->id, 'slug' => $call->slug ]) }}" class="btn btn-secondary" title="Cart">{{ __('frontstaticword.GoToCourse') }}</a>
+                                                            </div>
+                                                        @endif
+                                                    @endif
+                                                @else
+                                                    <div class="protip-btn">
+                                                        <a href="{{ route('login') }}" class="btn btn-primary" title="Enroll Now">{{ __('frontstaticword.EnrollNow') }}</a>
+                                                    </div>
+                                                @endif
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+        @endforeach
+    </div>
+
+</div>
+</section>
+@endif
+<!-- All Courses end -->
 
 
 <!-- Subscription Bundle start -->
