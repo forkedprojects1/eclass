@@ -452,7 +452,7 @@
                             <div class="col-lg-12 col-md-12">
                                 <div class="product-learn-dtl">
                                     <ul>
-                                        <li><i class="flaticon-tick-inside-circle"></i>{{ str_limit($wl['detail'], $limit = 120, $end = '...') }}</li>
+                                        <li><i class="flaticon-tick-inside-circle"></i>{{ str_limit($wl['detail'], $limit = 300, $end = '...') }}</li>
                                     </ul>
                                 </div>
                             </div>
