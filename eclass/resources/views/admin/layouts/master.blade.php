@@ -329,7 +329,7 @@ $rtl = array('ar','he','ur', 'arc', 'az', 'dv', 'ku', 'fa'); //make a list of rt
     <script type="text/javascript">
       
       tinymce.init({   
-        selector: 'textarea#detail, textarea#detail2, textarea#detail3',    
+        selector: 'textarea#detail, textarea#detail2, textarea#detail3, textarea#requirements',
         rtl_ui:true,
         directionality :"rtl",
         height: 250,
@@ -359,7 +359,7 @@ $rtl = array('ar','he','ur', 'arc', 'az', 'dv', 'ku', 'fa'); //make a list of rt
     <script type="text/javascript">
       
       tinymce.init({   
-        selector: 'textarea#detail, textarea#detail2, textarea#detail3', 
+        selector: 'textarea#detail, textarea#detail2, textarea#detail3, textarea#requirements',
         height: 250,
         menubar: 'edit view insert format tools table tc',
         autosave_ask_before_unload: true,

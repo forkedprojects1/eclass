@@ -202,7 +202,7 @@
                 </div>
                 <div class="col-md-6">
                   <label for="exampleInputDetails">{{ __('adminstaticword.Requirements') }}:<sup class="redstar">*</sup></label>
-                  <textarea name="requirement" rows="3" class="form-control" required >{!! $cor->requirement !!}</textarea>
+                  <textarea id="requirements" name="requirement" rows="3" class="form-control" required >{!! $cor->requirement !!}</textarea>
                 </div>
               </div>
               <br>
